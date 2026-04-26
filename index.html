@@ -1,314 +1,768 @@
 <!doctype html>
-<html lang="it" class="h-full">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ChefTeam — Diventa la persona che sa sempre cosa cucinare</title>
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <meta name="description" content="ChefTeam ti aiuta su WhatsApp a organizzare menu e spesa in modo semplice." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-  html, body { height: 100%; width: 100%; }
-  body {
-    font-family: 'Inter', sans-serif;
-    color: #2d2d2d;
-    background: #f8f5f0;
-    -webkit-font-smoothing: antialiased;
-  }
-  .font-serif { font-family: 'Fraunces', serif; letter-spacing: -0.02em; }
-  .wa-green { color: #25D366; }
-  .bg-wa { background-color: #25D366; }
-  .bg-wa:hover { background-color: #1fb855; }
-  .highlight-green { color: #25D366; font-style: italic; font-weight: 600; }
-  .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
-  .img-shadow { box-shadow: 0 30px 70px -20px rgba(0,0,0,0.2); }
-  .phone-frame {
-    background: #000;
-    border-radius: 40px;
-    padding: 12px;
-    box-shadow: 0 40px 100px -20px rgba(0,0,0,0.3);
-  }
-  .phone-screen {
-    border-radius: 32px;
-    overflow: hidden;
-    background: #ECE5DD;
-  }
-  .wa-header {
-    background: #075E54;
-    color: white;
-    padding: 16px 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .wa-bubble-in {
-    background: white;
-    border-radius: 8px 8px 8px 2px;
-    padding: 12px 14px;
-    max-width: 85%;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
-    font-size: 14px;
-    color: #222;
-  }
-  .wa-bubble-out {
-    background: #DCF8C6;
-    border-radius: 8px 8px 2px 8px;
-    padding: 12px 14px;
-    max-width: 85%;
-    margin-left: auto;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
-    font-size: 14px;
-    color: #222;
-  }
-  .faq-item summary { list-style: none; cursor: pointer; }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item[open] .faq-icon { transform: rotate(45deg); }
-  .faq-icon { transition: transform 0.3s; }
-  .grain {
-    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.02) 1px, transparent 0);
-    background-size: 20px 20px;
-  }
-  </style>
-  <style>body { box-sizing: border-box; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
- </head>
- <body class="h-full w-full">
-  <div class="w-full"><!-- NAV -->
-   <nav class="w-full px-6 md:px-12 py-5 flex items-center justify-between border-b border-neutral-200/60 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-    <div class="flex items-center gap-2">
-     <div class="w-8 h-8 rounded-lg bg-wa flex items-center justify-center"><i data-lucide="chef-hat" class="w-5 h-5 text-white"></i>
-     </div><span class="font-serif text-xl font-semibold">ChefTeam</span>
-    </div>
-    <div class="flex items-center gap-6">
-     <a href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-2 text-sm font-semibold text-white bg-wa px-5 py-2.5 rounded-full hover:bg-green-500 transition-colors"><i data-lucide="message-circle" class="w-4 h-4"></i>Scrivi su WhatsApp</a> <a href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-wa text-white hover:bg-green-500 transition-colors md:hidden" title="Contattaci su WhatsApp"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
-    </div>
-   </nav><!-- 1. HERO -->
-   <section class="w-full px-6 md:px-12 py-16 md:py-28">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-     <div class="fade-in">
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 border border-green-200 text-xs text-green-800 mb-8 font-medium"><span class="w-2 h-2 rounded-full bg-wa animate-pulse"></span>Su WhatsApp, nessuna app
-      </div>
-      <h1 class="font-serif text-5xl md:text-7xl font-bold leading-[1.05] mb-8 text-neutral-950">Diventa la persona che sa <span class="wa-green">sempre</span> cosa cucinare.</h1>
-      <p class="text-lg text-neutral-600 leading-relaxed mb-10 max-w-lg font-light">Ogni giorno la stessa scena: frigo aperto, nessuna idea, improvvisazione. ChefTeam cambia tutto questo. Su WhatsApp, senza app, senza complicazioni.</p><a href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-wa text-white px-8 py-4 rounded-full font-semibold shadow-lg shadow-green-500/25 transition-all hover:shadow-xl hover:-translate-y-0.5 hover:bg-green-500"><i data-lucide="message-circle" class="w-5 h-5"></i>Scrivi su WhatsApp</a>
-      <p class="text-sm text-neutral-500 mt-6 flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 wa-green"></i>Direttamente su WhatsApp, nessuna app da scaricare</p>
-      <p class="text-sm text-neutral-500 mt-3 flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 wa-green"></i>10 giorni di prova gratuita</p><a href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-wa text-white px-8 py-4 rounded-full font-semibold shadow-lg shadow-green-500/25 transition-all hover:shadow-xl hover:-translate-y-0.5 hover:bg-green-500 mt-8"><i data-lucide="message-circle" class="w-5 h-5"></i>Scrivi su WhatsApp</a>
-     </div>
-     <div class="fade-in flex justify-center md:justify-end">
-      <div class="relative w-full max-w-[560px] rounded-3xl overflow-hidden img-shadow aspect-[4/3]">
-       <img src="./images/hero-cucina.png" alt="Due persone che cucinano insieme in cucina" class="w-full h-full object-cover">
-       <div class="absolute left-6 bottom-6 bg-white/95 backdrop-blur rounded-2xl shadow-lg px-5 py-4 flex items-center gap-4 max-w-[330px]">
-        <div class="w-12 h-12 rounded-xl bg-wa flex items-center justify-center flex-shrink-0">
-         <i data-lucide="check-square" class="w-6 h-6 text-white"></i>
-        </div>
-        <div>
-         <div class="font-semibold text-neutral-950 text-base">Menu pronto in pochi minuti</div>
-         <div class="text-sm text-neutral-500 mt-1">Spesa inclusa, direttamente su WhatsApp</div>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section><!-- 2. SEZIONE IDENTITÀ / DESIDERIO - DARK -->
-   <section class="w-full bg-neutral-950 text-white py-28 md:py-36 grain">
-    <div class="max-w-4xl mx-auto px-6 md:px-12 text-center">
-     <h2 class="font-serif text-5xl md:text-7xl font-bold leading-tight mb-10 fade-in">La cucina dovrebbe essere <span class="wa-green">semplice</span>.</h2>
-     <p class="text-lg md:text-2xl text-neutral-300 font-serif mb-12 fade-in leading-relaxed">Non stai cercando solo ricette. Cerchi <span class="wa-green font-medium">ordine</span>, <span class="wa-green font-medium">calma</span> e <span class="wa-green font-medium">controllo</span>.</p>
-     <p class="text-lg text-neutral-400 max-w-2xl mx-auto leading-relaxed fade-in font-light">Vuoi smettere di improvvisare ogni giorno. Vuoi vivere la settimana consapevolmente, sapendo cosa cucinerai, cosa comprerai, cosa mangerai. ChefTeam ti aiuta a diventare quella persona.</p>
-    </div>
-   </section><!-- 3. PROBLEMA -->
-   <section class="w-full px-6 md:px-12 py-24 md:py-32 bg-white">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-24 items-center">
-     <div class="fade-in">
-      <div class="inline-block text-xs uppercase tracking-widest text-neutral-500 mb-6 font-semibold">
-       Il problema
-      </div>
-      <h2 class="font-serif text-4xl md:text-6xl font-bold leading-tight mb-8">Mangiare bene ogni giorno era più complicato del previsto</h2>
-      <p class="text-lg text-neutral-600 leading-relaxed mb-10 font-light">Non era solo una questione di ricette. Il problema era non avere chiarezza: finivi per cucinare sempre le stesse cose, improvvisare, perdere tempo al supermercato e non sapevi davvero come gestire i pasti in modo più equilibrato.</p>
-      <ul class="space-y-5">
-       <li class="flex gap-4 items-start"><i data-lucide="x" class="w-5 h-5 text-red-400 mt-1 flex-shrink-0"></i><span class="text-neutral-700 text-base">Cucinavi sempre le stesse cose</span></li>
-       <li class="flex gap-4 items-start"><i data-lucide="x" class="w-5 h-5 text-red-400 mt-1 flex-shrink-0"></i><span class="text-neutral-700 text-base">Non sapevi come gestire macro, proteine e fibre</span></li>
-       <li class="flex gap-4 items-start"><i data-lucide="x" class="w-5 h-5 text-red-400 mt-1 flex-shrink-0"></i><span class="text-neutral-700 text-base">Passavi troppo tempo al supermercato senza sapere cosa comprare</span></li>
-       <li class="flex gap-4 items-start"><i data-lucide="x" class="w-5 h-5 text-red-400 mt-1 flex-shrink-0"></i><span class="text-neutral-700 text-base">La spesa era lunga, dispersiva e piena di dubbi</span></li>
-       <li class="flex gap-4 items-start"><i data-lucide="x" class="w-5 h-5 text-red-400 mt-1 flex-shrink-0"></i><span class="text-neutral-700 text-base">A casa non sapevi cosa cucinare, finivi per improvvisare</span></li>
-       <li class="flex gap-4 items-start"><i data-lucide="x" class="w-5 h-5 text-red-400 mt-1 flex-shrink-0"></i><span class="text-neutral-700 text-base">Mangiavi senza un criterio chiaro, senza continuità</span></li>
-      </ul>
-     </div>
-     <div class="fade-in rounded-3xl img-shadow overflow-hidden aspect-[4/5] w-full">
-      <img src="./images/foto_frigo.jpeg" alt="Frigo con pochi ingredienti da organizzare" class="w-full h-full object-cover">
-     </div>
-     </div>
-    </div>
-   </section><!-- 4. FUTURO -->
-   <section class="w-full px-6 md:px-12 py-24 md:py-32 bg-white">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-24 items-center">
-     <div class="fade-in order-2 md:order-1 rounded-3xl img-shadow overflow-hidden aspect-[4/5] w-full">
-      <img src="./images/lista_della_spesa.png" alt="Lista della spesa ChefTeam aperta su WhatsApp al supermercato" class="w-full h-full object-cover">
-     </div>
-     </div>
-     <div class="fade-in order-1 md:order-2">
-      <div class="inline-block text-xs uppercase tracking-widest wa-green mb-6 font-semibold">
-       La soluzione
-      </div>
-      <h2 class="font-serif text-4xl md:text-6xl font-bold leading-tight mb-8">Immagina di svegliarti così</h2>
-      <p class="text-lg text-neutral-600 leading-relaxed mb-10 font-light">Sai già cosa mangerai. La spesa è pronta. Nessuna domanda, nessun caos, nessuno spreco.</p>
-      <ul class="space-y-5">
-       <li class="flex gap-4 items-start"><i data-lucide="check" class="w-5 h-5 wa-green mt-1 flex-shrink-0"></i><span class="text-neutral-800 text-base">Apri WhatsApp e sai cosa mangerai</span></li>
-       <li class="flex gap-4 items-start"><i data-lucide="check" class="w-5 h-5 wa-green mt-1 flex-shrink-0"></i><span class="text-neutral-800 text-base">La spesa è pronta, non improvvisi</span></li>
-       <li class="flex gap-4 items-start"><i data-lucide="check" class="w-5 h-5 wa-green mt-1 flex-shrink-0"></i><span class="text-neutral-800 text-base">Compri solo quello che ti serve</span></li>
-       <li class="flex gap-4 items-start"><i data-lucide="check" class="w-5 h-5 wa-green mt-1 flex-shrink-0"></i><span class="text-neutral-800 text-base">Nessuna ricetta complicata, solo semplicità</span></li>
-       <li class="flex gap-4 items-start"><i data-lucide="check" class="w-5 h-5 wa-green mt-1 flex-shrink-0"></i><span class="text-neutral-800 text-base">Vivi la settimana con più ordine e controllo</span></li>
-      </ul>
-     </div>
-    </div>
-   </section><!-- 5. CHEFTEAM TI SEMPLIFICA TUTTO - CARDS -->
-   <section class="w-full px-6 md:px-12 py-24 md:py-32 bg-white">
-    <div class="max-w-6xl mx-auto">
-     <div class="text-center mb-16 fade-in">
-      <div class="inline-block text-xs uppercase tracking-widest text-neutral-500 mb-6 font-semibold">
-       Come funziona
-      </div>
-      <h2 class="font-serif text-4xl md:text-6xl font-bold leading-tight">ChefTeam ti semplifica tutto</h2>
-     </div>
-     <div class="grid md:grid-cols-3 gap-8">
-      <div class="fade-in bg-white p-8 rounded-2xl border border-neutral-200 hover:shadow-lg transition-shadow">
-       <div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center mb-6"><i data-lucide="utensils" class="w-6 h-6 wa-green"></i>
-       </div>
-       <h3 class="font-serif text-xl font-bold mb-3">Decidi con calma</h3>
-       <p class="text-neutral-600 leading-relaxed font-light">Ogni mattina sai cosa mangiare. Nessuna indecisione, nessuna perdita di tempo.</p>
-      </div>
-      <div class="fade-in bg-white p-8 rounded-2xl border border-neutral-200 hover:shadow-lg transition-shadow">
-       <div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center mb-6"><i data-lucide="shopping-basket" class="w-6 h-6 wa-green"></i>
-       </div>
-       <h3 class="font-serif text-xl font-bold mb-3">Spesa consapevole</h3>
-       <p class="text-neutral-600 leading-relaxed font-light">Entri al supermercato sapendo esattamente cosa comprare. Nessuno spreco.</p>
-      </div>
-      <div class="fade-in bg-white p-8 rounded-2xl border border-neutral-200 hover:shadow-lg transition-shadow">
-       <div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center mb-6"><i data-lucide="refresh-cw" class="w-6 h-6 wa-green"></i>
-       </div>
-       <h3 class="font-serif text-xl font-bold mb-3">Semplicità vera</h3>
-       <p class="text-neutral-600 leading-relaxed font-light">Ricette semplici, ingredienti che hai già, nessuna complicazione.</p>
-      </div>
-     </div>
-     <div class="fade-in mt-14 rounded-3xl img-shadow overflow-hidden aspect-[16/7] w-full">
-      <img src="./images/piatto.png" alt="Piatto semplice e bilanciato suggerito da ChefTeam" class="w-full h-full object-cover">
-     </div>
-    </div>
-   </section><!-- 6. FOUNDER STORY -->
-   <section class="w-full px-6 md:px-12 py-24 md:py-32 bg-white">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-5 gap-12 md:gap-16 items-center">
-     <div class="md:col-span-3 fade-in">
-      <div class="inline-block text-xs uppercase tracking-widest text-neutral-500 mb-6 font-semibold">
-       La storia
-      </div>
-      <h2 class="font-serif text-4xl md:text-6xl font-bold leading-tight mb-10">ChefTeam nasce da un problema reale.</h2>
-      <div class="space-y-6 text-neutral-700 leading-relaxed text-lg font-light">
-       <p>Dopo le feste ho preso 5 chili in una settimana. E ho capito che il problema non era mangiare in generale, ma non avere un sistema semplice per sapere cosa mangiare consapevolmente.</p>
-       <p>Ho iniziato a cercare una soluzione. Ma ogni app, ogni strumento mi costringeva a ripartire da zero. Dovevo sempre correggere, aggiornare, rispiegare. Nessuno si ricordava di me, dei miei gusti, dei miei obiettivi.</p>
-       <p>Da lì è nata l'idea di ChefTeam: un assistente che conosce te, sa quello che vuoi, e ti aiuta davvero — ogni settimana, senza complicazioni, su WhatsApp.</p>
-      </div>
-     </div>
-     <div class="md:col-span-2 fade-in rounded-3xl img-shadow overflow-hidden aspect-[4/5] w-full">
-      <img src="./images/founder.jpeg" alt="Founder di ChefTeam" class="w-full h-full object-cover">
-     </div>
-     </div>
-    </div>
-   </section><!-- 7. PREZZI -->
-   <section id="prezzi" class="w-full px-6 md:px-12 py-24 md:py-32 bg-white">
-    <div class="max-w-5xl mx-auto">
-     <div class="text-center mb-16 fade-in">
-      <h2 class="font-serif text-4xl md:text-6xl font-bold leading-tight mb-6">Scegli il modo più semplice per iniziare</h2>
-      <p class="text-lg text-neutral-600 max-w-2xl mx-auto font-light">Più ordine, meno sprechi, meno tempo perso. Tutto direttamente su WhatsApp.</p>
-     </div>
-     <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-      <div class="fade-in bg-white rounded-2xl p-8 border border-neutral-200 flex flex-col">
-       <div class="mb-2 text-xs font-semibold text-neutral-500 uppercase tracking-wide">
-        Mensile
-       </div>
-       <div class="flex items-baseline gap-1 mb-4"><span class="font-serif text-6xl font-bold">€7,90</span><span class="text-neutral-500 text-lg">/mese</span>
-       </div>
-       <p class="text-neutral-600 mb-2 font-light">Perfetto per iniziare con flessibilità</p>
-       <p class="text-sm text-green-600 font-medium mb-10">+ 10 giorni di prova gratuita</p>
-       <ul class="space-y-4 mb-10 flex-1">
-        <li class="flex gap-3 items-start text-neutral-700 text-base"><i data-lucide="check" class="w-5 h-5 wa-green mt-0.5 flex-shrink-0"></i>Menu settimanali su misura</li>
-        <li class="flex gap-3 items-start text-neutral-700 text-base"><i data-lucide="check" class="w-5 h-5 wa-green mt-0.5 flex-shrink-0"></i>Lista della spesa automatica</li>
-        <li class="flex gap-3 items-start text-neutral-700 text-base"><i data-lucide="check" class="w-5 h-5 wa-green mt-0.5 flex-shrink-0"></i>Direttamente su WhatsApp</li>
-       </ul><a href="https://wa.me/393931423221?text=Ciao%20ChefTeam%20voglio%20iniziare" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center gap-2 w-full border-2 border-neutral-950 text-neutral-950 font-semibold py-3.5 rounded-full hover:bg-neutral-950 hover:text-white transition text-base">Inizia ora</a>
-      </div>
-      <div class="fade-in relative bg-neutral-950 text-white rounded-2xl p-8 border border-neutral-900 flex flex-col shadow-xl">
-       <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-wa text-white text-xs font-bold px-5 py-1.5 rounded-full shadow-lg">
-        Più conveniente
-       </div>
-       <div class="mb-2 text-xs font-semibold text-green-300 uppercase tracking-wide">
-        Trimestrale
-       </div>
-       <div class="flex items-baseline gap-1 mb-4"><span class="font-serif text-6xl font-bold">€19,90</span><span class="text-neutral-400 text-lg">/3 mesi</span>
-       </div>
-       <p class="text-neutral-300 mb-10 font-light">Il modo migliore per darti continuità</p>
-       <ul class="space-y-4 mb-10 flex-1">
-        <li class="flex gap-3 items-start text-neutral-200 text-base"><i data-lucide="check" class="w-5 h-5 wa-green mt-0.5 flex-shrink-0"></i>Tutto del piano mensile</li>
-        <li class="flex gap-3 items-start text-neutral-200 text-base"><i data-lucide="check" class="w-5 h-5 wa-green mt-0.5 flex-shrink-0"></i>Risparmi oltre il 20%</li>
-        <li class="flex gap-3 items-start text-neutral-200 text-base"><i data-lucide="check" class="w-5 h-5 wa-green mt-0.5 flex-shrink-0"></i>Piano costruito nel tempo</li>
-       </ul><a href="https://wa.me/393931423221?text=Ciao%20ChefTeam%20voglio%20iniziare" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center gap-2 w-full bg-wa text-white font-semibold py-3.5 rounded-full hover:opacity-90 transition shadow-lg shadow-green-500/20 text-base">Inizia ora</a>
-      </div>
-     </div>
-    </div>
-   </section><!-- 8. FAQ -->
-   <section class="w-full px-6 md:px-12 py-24 md:py-32 bg-white">
-    <div class="max-w-3xl mx-auto">
-     <div class="text-center mb-16 fade-in">
-      <h2 class="font-serif text-4xl md:text-6xl font-bold leading-tight mb-6">Domande comuni</h2>
-     </div>
-     <div class="space-y-4">
-      <details class="faq-item fade-in group bg-white rounded-2xl border border-neutral-200 p-7 hover:border-neutral-300 transition">
-       <summary class="flex justify-between items-center gap-4 cursor-pointer"><span class="font-serif text-lg font-bold text-neutral-950">Non è una dieta, vero?</span><i data-lucide="plus" class="faq-icon w-5 h-5 text-neutral-400 flex-shrink-0"></i></summary>
-       <p class="mt-5 text-neutral-600 leading-relaxed font-light">No. ChefTeam non è una dieta, non è rigido, non è un programma. È semplicemente un assistente che ti aiuta a decidere cosa cucinare, adattandosi a te — ai tuoi gusti, ai tuoi tempi, alle tue preferenze.</p>
-      </details>
-      <details class="faq-item fade-in group bg-white rounded-2xl border border-neutral-200 p-7 hover:border-neutral-300 transition">
-       <summary class="flex justify-between items-center gap-4 cursor-pointer"><span class="font-serif text-lg font-bold text-neutral-950">Devo capire di nutrizione?</span><i data-lucide="plus" class="faq-icon w-5 h-5 text-neutral-400 flex-shrink-0"></i></summary>
-       <p class="mt-5 text-neutral-600 leading-relaxed font-light">Niente. Parla come un amico. ChefTeam sa cosa fare, tu sai solo cosa mangerai. Nessuna teoria, nessun tecnicismo.</p>
-      </details>
-      <details class="faq-item fade-in group bg-white rounded-2xl border border-neutral-200 p-7 hover:border-neutral-300 transition">
-       <summary class="flex justify-between items-center gap-4 cursor-pointer"><span class="font-serif text-lg font-bold text-neutral-950">Funziona davvero solo su WhatsApp?</span><i data-lucide="plus" class="faq-icon w-5 h-5 text-neutral-400 flex-shrink-0"></i></summary>
-       <p class="mt-5 text-neutral-600 leading-relaxed font-light">Sì, tutto avviene dentro WhatsApp. L'app che usi già ogni giorno. Nessuna app da scaricare, nessun sito da visitare. Scrivi, ricevi il menu e la lista, e organizzi la tua settimana da lì.</p>
-      </details>
-     </div>
-    </div>
-   </section><!-- 9. CTA FINALE -->
-   <section class="w-full px-6 md:px-12 py-28 md:py-36 bg-neutral-950 text-white grain">
-    <div class="max-w-3xl mx-auto text-center fade-in">
-     <h2 class="font-serif text-5xl md:text-7xl font-bold leading-[1.05] mb-8">Smetti di improvvisare.</h2>
-     <p class="text-lg text-neutral-300 mb-12 max-w-xl mx-auto leading-relaxed font-light">Scrivi a ChefTeam e inizia a vivere la settimana con più ordine, consapevolezza e controllo. Tutto su WhatsApp, nessuna app da scaricare.</p><a href="https://wa.me/393931423221?text=Ciao%20ChefTeam%20vorrei%20provare" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-wa text-white px-8 py-4 rounded-full font-semibold shadow-lg shadow-green-500/30 transition-all hover:shadow-xl hover:-translate-y-0.5 hover:bg-green-500 text-base"><i data-lucide="message-circle" class="w-5 h-5"></i>Scrivi su WhatsApp</a>
-     <p class="text-sm text-neutral-500 mt-6">10 giorni di prova gratuita · Annulla quando vuoi</p>
-    </div>
-   </section><!-- FOOTER -->
-   <footer class="w-full px-6 md:px-12 py-10 bg-neutral-950 border-t border-neutral-800 text-neutral-500 text-sm">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-     <div class="flex items-center gap-2">
-      <div class="w-6 h-6 rounded-md bg-wa flex items-center justify-center"><i data-lucide="chef-hat" class="w-4 h-4 text-white"></i>
-      </div><span class="font-serif font-medium text-neutral-300">ChefTeam</span>
-     </div>
-     <div>
-      © 2025 ChefTeam. Tutti i diritti riservati.
-     </div>
-    </div>
-   </footer>
-  </div>
-  <script>
-  lucide.createIcons();
+    :root{
+      --green:#25D366;
+      --green-dark:#0B8F7A;
+      --black:#191919;
+      --text:#232323;
+      --muted:#6B6B6B;
+      --cream:#F8F5F0;
+      --cream-2:#F2EDE5;
+      --mint:#E9FAF3;
+      --line:#E7E1D8;
+      --max:1280px;
+    }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:#fff;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+
+    .serif{
+      font-family:Fraunces,Georgia,serif;
+      letter-spacing:-0.045em;
+      line-height:.96;
+    }
+
+    .green{color:var(--green-dark)}
+    .wa-green{color:var(--green)}
+    .italic{font-style:italic}
+
+    .container{
+      width:min(var(--max), calc(100% - 96px));
+      margin:0 auto;
+    }
+
+    .nav{
+      height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 48px;
+      border-bottom:1px solid rgba(0,0,0,.06);
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(12px);
+      position:sticky;
+      top:0;
+      z-index:50;
+    }
+
+    .logo{
+      font-family:Fraunces,Georgia,serif;
+      font-size:26px;
+      font-weight:800;
+      letter-spacing:-.04em;
+      color:#111;
+    }
+    .logo span{color:var(--green-dark)}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border:0;
+      border-radius:999px;
+      padding:18px 34px;
+      font-weight:800;
+      font-size:18px;
+      cursor:pointer;
+      transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-green{
+      background:var(--green);
+      color:white;
+      box-shadow:0 18px 34px rgba(37,211,102,.28);
+    }
+    .btn-black{
+      background:var(--black);
+      color:white;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 24px;
+      border-radius:999px;
+      background:var(--mint);
+      color:var(--green-dark);
+      font-size:15px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    .section{
+      padding:116px 0;
+    }
+
+    .hero{
+      padding:22px 0 96px;
+      background:#fff;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.02fr 1fr;
+      gap:76px;
+      align-items:center;
+    }
+    .hero h1{
+      font-size:76px;
+      margin:0 0 34px;
+      max-width:620px;
+    }
+    .hero p{
+      max-width:590px;
+      color:#555;
+      font-size:22px;
+      line-height:1.58;
+      margin:0 0 40px;
+      font-weight:500;
+    }
+    .hero-note{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-top:26px;
+      color:#828282;
+      font-weight:600;
+      font-size:15px;
+    }
+    .hero-dots{
+      display:inline-flex;
+      gap:7px;
+    }
+    .hero-dots span{
+      width:10px;height:10px;
+      border-radius:50%;
+      background:#9BE8BA;
+    }
+    .photo-card{
+      position:relative;
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:0 28px 80px rgba(0,0,0,.14);
+      background:#f3f3f3;
+    }
+    .hero-photo{
+      aspect-ratio:4/3;
+    }
+    .photo-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .floating-card{
+      position:absolute;
+      left:38px;
+      bottom:32px;
+      display:flex;
+      align-items:center;
+      gap:18px;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(10px);
+      border-radius:18px;
+      padding:18px 24px;
+      box-shadow:0 20px 48px rgba(0,0,0,.16);
+      min-width:330px;
+    }
+    .floating-icon{
+      width:52px;
+      height:52px;
+      border-radius:13px;
+      background:var(--green);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:26px;
+      flex:0 0 auto;
+    }
+    .floating-card strong{
+      display:block;
+      color:#111;
+      font-size:17px;
+      margin-bottom:6px;
+    }
+    .floating-card span{
+      color:#747474;
+      font-size:15px;
+      font-weight:600;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:92px;
+      align-items:center;
+    }
+    .large-photo{
+      border-radius:26px;
+      overflow:hidden;
+      box-shadow:0 26px 70px rgba(0,0,0,.13);
+      aspect-ratio:4/3;
+      background:#f2f2f2;
+    }
+    .large-photo.tall{
+      aspect-ratio:1.08/1;
+    }
+    .large-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    h2{
+      font-size:56px;
+      margin:34px 0 42px;
+      color:#171717;
+    }
+
+    .check-list{
+      display:grid;
+      gap:24px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+    .check-list li{
+      display:flex;
+      align-items:center;
+      gap:20px;
+      color:#4b4b4b;
+      font-size:22px;
+      line-height:1.35;
+      font-weight:500;
+    }
+    .check{
+      width:32px;
+      height:32px;
+      border-radius:50%;
+      background:var(--green);
+      color:#fff;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      flex:0 0 auto;
+      font-weight:900;
+    }
+
+    .cream{
+      background:var(--cream-2);
+    }
+    .problem h2{
+      margin-top:34px;
+      margin-bottom:62px;
+      font-size:58px;
+    }
+    .dash-list{
+      display:grid;
+      gap:26px;
+      list-style:none;
+      margin:0;
+      padding:0;
+    }
+    .dash-list li{
+      display:flex;
+      gap:24px;
+      align-items:center;
+      color:#4f4f4f;
+      font-size:22px;
+      line-height:1.35;
+      font-weight:500;
+    }
+    .dash{
+      width:20px;
+      height:3px;
+      border-radius:99px;
+      background:var(--green-dark);
+      flex:0 0 auto;
+    }
+
+    .dark{
+      background:var(--black);
+      color:#fff;
+    }
+    .dark .badge{
+      background:#1F4E30;
+      color:#79F0A3;
+    }
+    .center{
+      text-align:center;
+      max-width:940px;
+      margin:0 auto;
+    }
+    .dark h2{
+      color:#fff;
+      font-size:62px;
+      margin:34px 0 42px;
+    }
+    .dark p{
+      color:#AFAFAF;
+      font-size:22px;
+      line-height:1.55;
+      max-width:770px;
+      margin:0 auto;
+      font-weight:600;
+    }
+    .cta-dark{
+      padding:120px 0;
+      background:
+        radial-gradient(circle at 50% 100%, rgba(37,211,102,.22), transparent 34%),
+        var(--black);
+    }
+    .cta-dark h2{
+      font-size:70px;
+      max-width:920px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .cards-head{
+      text-align:center;
+      margin-bottom:72px;
+    }
+    .cards-head h2{
+      margin-bottom:0;
+    }
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:28px;
+    }
+    .feature-card{
+      min-height:260px;
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:48px 42px;
+      box-shadow:0 20px 60px rgba(0,0,0,.07);
+      background:#fff;
+    }
+    .feature-icon{
+      width:58px;
+      height:58px;
+      border-radius:17px;
+      background:var(--mint);
+      color:var(--green-dark);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      margin-bottom:34px;
+    }
+    .feature-card h3{
+      font-family:Fraunces,Georgia,serif;
+      font-size:28px;
+      letter-spacing:-.04em;
+      margin:0 0 22px;
+      color:#171717;
+    }
+    .feature-card p{
+      color:#575757;
+      font-size:19px;
+      line-height:1.5;
+      margin:0;
+      font-weight:500;
+    }
+
+    .faq{
+      max-width:760px;
+      margin:0 auto;
+    }
+    .faq h2{
+      text-align:center;
+      margin-top:26px;
+      margin-bottom:62px;
+    }
+    details{
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:#fff;
+      margin-bottom:16px;
+      padding:0;
+      overflow:hidden;
+    }
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding:28px 34px;
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      align-items:center;
+      color:#171717;
+      font-weight:800;
+      font-size:20px;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{
+      color:#5f5f5f;
+      font-size:17px;
+      line-height:1.55;
+      margin:0;
+      padding:0 34px 30px;
+    }
+    .plus{
+      width:28px;height:28px;border-radius:50%;
+      background:var(--mint);
+      color:var(--green-dark);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;
+    }
+
+    .pricing{
+      text-align:center;
+    }
+    .pricing h2{
+      margin:30px auto 20px;
+      max-width:880px;
+    }
+    .pricing-sub{
+      color:#7a7a7a;
+      font-size:22px;
+      line-height:1.45;
+      margin:0 auto 70px;
+      max-width:650px;
+      font-weight:600;
+    }
+    .price-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+      max-width:760px;
+      margin:0 auto;
+      text-align:left;
+    }
+    .price-card{
+      position:relative;
+      border:2px solid var(--line);
+      border-radius:28px;
+      padding:52px 44px;
+      background:#fff;
+    }
+    .price-card.featured{
+      border-color:var(--green);
+      background:#EEFDF5;
+    }
+    .price-label{
+      color:#858585;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:800;
+      font-size:14px;
+      margin-bottom:22px;
+    }
+    .price{
+      font-family:Fraunces,Georgia,serif;
+      font-size:56px;
+      font-weight:800;
+      letter-spacing:-.05em;
+      color:#171717;
+      margin-bottom:16px;
+    }
+    .price small{
+      font-family:Inter,sans-serif;
+      font-size:20px;
+      color:#777;
+      font-weight:500;
+      letter-spacing:0;
+    }
+    .price-card p{
+      color:#5c5c5c;
+      font-size:18px;
+      margin:0 0 40px;
+      font-weight:500;
+    }
+    .ribbon{
+      position:absolute;
+      top:-19px;
+      left:50%;
+      transform:translateX(-50%);
+      background:var(--green);
+      color:#fff;
+      border-radius:999px;
+      padding:12px 28px;
+      font-size:14px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+    .price-card .btn{
+      width:100%;
+      padding:18px 24px;
+      font-size:17px;
+    }
+
+    .founder{
+      background:#ECFFF7;
+      border-top:1px solid #CBEFE0;
+    }
+    .founder .two-col{
+      gap:78px;
+    }
+    .founder p{
+      color:#4d4d4d;
+      font-size:21px;
+      line-height:1.68;
+      margin:0 0 24px;
+      font-weight:500;
+    }
+
+    .footer{
+      padding:34px 0;
+      background:#fff;
+      border-top:1px solid rgba(0,0,0,.06);
+      color:#777;
+      text-align:center;
+      font-size:14px;
+    }
+
+    @media(max-width: 900px){
+      .container{width:min(100% - 40px,var(--max))}
+      .nav{height:70px;padding:0 20px}
+      .logo{font-size:23px}
+      .nav .btn{padding:13px 18px;font-size:0}
+      .nav .btn span{display:none}
+      .section{padding:78px 0}
+      .hero{padding:34px 0 74px}
+      .hero-grid,.two-col,.cards,.price-grid{
+        grid-template-columns:1fr;
+        gap:44px;
       }
-    });
-  }, { threshold: 0.12 });
+      .hero h1{font-size:48px;max-width:none}
+      .hero p{font-size:18px}
+      h2,.problem h2{font-size:42px}
+      .dark h2,.cta-dark h2{font-size:44px}
+      .check-list li,.dash-list li{font-size:18px}
+      .large-photo,.large-photo.tall,.hero-photo{aspect-ratio:4/3}
+      .floating-card{
+        left:16px;
+        right:16px;
+        bottom:16px;
+        min-width:0;
+        padding:14px 16px;
+      }
+      .floating-icon{width:42px;height:42px;font-size:22px}
+      .floating-card strong{font-size:15px}
+      .floating-card span{font-size:13px}
+      .feature-card{padding:34px 28px;min-height:auto}
+      .price-card{padding:42px 30px}
+      .price{font-size:48px}
+      .founder .two-col .large-photo{order:-1}
+    }
+  </style>
+</head>
 
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-  </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f26a237e12d90fa',t:'MTc3NzIxNzQ3OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>index.html
+<body>
+  <nav class="nav">
+    <a class="logo" href="#">Chef<span>Team</span></a>
+    <a class="btn btn-green" href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener">☘️ <span>Provalo su WhatsApp</span></a>
+  </nav>
+
+  <main>
+    <!-- ORDINE NUMERICO SCREENSHOT: 1 Hero → 2 Manifesto → 3 Problema → 4 Settimana → 5 Come funziona → 6 Founder → 7 Prezzi → 8 FAQ → 9 CTA -->
+<section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1 class="serif">Diventa la persona che sa sempre cosa <span class="green italic">cucinare.</span></h1>
+          <p>ChefTeam ti aiuta su WhatsApp a organizzare menu e spesa in modo semplice, così smetti di improvvisare, perdi meno tempo e vivi la settimana con più leggerezza.</p>
+          <a class="btn btn-green" href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener">☘️ Provalo su WhatsApp</a>
+          <div class="hero-note">
+            <span class="hero-dots"><span></span><span></span><span></span></span>
+            Direttamente su WhatsApp, nessuna app da scaricare
+          </div>
+        </div>
+
+        <div class="photo-card hero-photo">
+          <img src="./images/hero-cucina.png" alt="Due persone che cucinano insieme in cucina">
+          <div class="floating-card">
+            <div class="floating-icon">✓</div>
+            <div>
+              <strong>Menu pronto in 30 secondi</strong>
+              <span>Spesa inclusa, ogni settimana</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="container center">
+        <div class="badge">Quello che cerchi davvero</div>
+        <h2 class="serif">Non stai cercando solo idee per i pasti.<br>Stai cercando più ordine, più costanza, <span class="wa-green italic">più controllo.</span></h2>
+        <p>Il punto non è cucinare perfettamente. Il punto è smettere di arrivare ogni giorno senza sapere cosa mangiare, cosa comprare e da dove partire.</p>
+      </div>
+    </section>
+
+    <section class="section cream problem">
+      <div class="container two-col">
+        <div>
+          <div class="badge">Il problema quotidiano</div>
+          <h2 class="serif">Sei stufo di:</h2>
+          <ul class="dash-list">
+            <li><span class="dash"></span>aprire il frigo e andare nel pallone</li>
+            <li><span class="dash"></span>fare una spesa lunga e dispersiva</li>
+            <li><span class="dash"></span>comprare cose inutili che finiscono per scadere</li>
+            <li><span class="dash"></span>pensare ogni giorno “oggi cosa cucino?”</li>
+            <li><span class="dash"></span>iniziare bene e mollare dopo poco</li>
+          </ul>
+        </div>
+
+        <div class="large-photo">
+          <img src="./images/piatto.png" alt="Piatto semplice e appetitoso suggerito da ChefTeam">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container two-col">
+        <div class="large-photo">
+          <img src="./images/lista_della_spesa.png" alt="Lista della spesa ChefTeam aperta al supermercato">
+        </div>
+
+        <div>
+          <div class="badge">La tua settimana con ChefTeam</div>
+          <h2 class="serif">Immagina la tua settimana così</h2>
+          <ul class="check-list">
+            <li><span class="check">✓</span>apri WhatsApp e sai già cosa mangiare</li>
+            <li><span class="check">✓</span>fai la spesa più in fretta, con una lista chiara</li>
+            <li><span class="check">✓</span>compri solo quello che ti serve davvero</li>
+            <li><span class="check">✓</span>hai piatti semplici e piacevoli da seguire</li>
+            <li><span class="check">✓</span>ti senti finalmente più costante e organizzato</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cards-head">
+          <div class="badge">Come funziona</div>
+          <h2 class="serif">ChefTeam ti semplifica tutto</h2>
+        </div>
+
+        <div class="cards">
+          <div class="feature-card">
+            <div class="feature-icon">📅</div>
+            <h3>Menu chiaro</h3>
+            <p>Sai subito cosa mangiare ogni giorno della settimana. Niente più indecisione, niente più improvvisazione.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🛍️</div>
+            <h3>Spesa smart</h3>
+            <p>Entri al supermercato con una lista già pronta. Sai cosa prendere, quanto, e non compri il superfluo.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">✏️</div>
+            <h3>Piatti flessibili</h3>
+            <p>Se qualcosa non ti va, lo cambi. ChefTeam si adatta a te, non il contrario.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section founder">
+      <div class="container two-col">
+        <div>
+          <div class="badge">Chi ha creato ChefTeam</div>
+          <h2 class="serif">ChefTeam nasce da un problema reale</h2>
+          <p>L’ho creato perché anche io perdevo tempo a decidere cosa mangiare, facevo una spesa dispersiva e faticavo a essere costante.</p>
+          <p>Non volevo l’ennesima soluzione complicata.</p>
+          <p>Volevo qualcosa di semplice, pratico e davvero utile nella vita di tutti i giorni.</p>
+        </div>
+
+        <div class="large-photo tall">
+          <img src="./images/founder.jpeg" alt="Founder di ChefTeam">
+        </div>
+      </div>
+    </section>
+<section class="section pricing">
+      <div class="container">
+        <div class="badge">Prezzi</div>
+        <h2 class="serif">Scegli il modo più semplice per iniziare</h2>
+        <p class="pricing-sub">Più ordine, meno sprechi, meno tempo perso. Tutto direttamente su WhatsApp.</p>
+
+        <div class="price-grid">
+          <div class="price-card">
+            <div class="price-label">Mensile</div>
+            <div class="price">€6,90 <small>/mese</small></div>
+            <p>Perfetto per iniziare con flessibilità</p>
+            <a class="btn btn-black" href="https://wa.me/393931423221?text=Ciao%20ChefTeam%20voglio%20iniziare" target="_blank" rel="noopener">Inizia ora</a>
+          </div>
+
+          <div class="price-card featured">
+            <div class="ribbon">Più conveniente</div>
+            <div class="price-label">Trimestrale</div>
+            <div class="price">€19,90 <small>/3 mesi</small></div>
+            <p>Il modo migliore per darti continuità</p>
+            <a class="btn btn-green" href="https://wa.me/393931423221?text=Ciao%20ChefTeam%20voglio%20iniziare" target="_blank" rel="noopener">Inizia ora</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container faq">
+        <div style="text-align:center"><div class="badge">Domande frequenti</div></div>
+        <h2 class="serif">Hai qualche dubbio?</h2>
+
+        <details>
+          <summary>ChefTeam è una dieta? <span class="plus">+</span></summary>
+          <p>No. ChefTeam è un assistente culinario: ti aiuta a organizzare menu, spesa e ricette. Non sostituisce un nutrizionista o un medico.</p>
+        </details>
+        <details>
+          <summary>Devo capire calorie, macro o nutrizione? <span class="plus">+</span></summary>
+          <p>No. Puoi usarlo in modo semplice. Le indicazioni sono pratiche e orientative, non cliniche.</p>
+        </details>
+        <details>
+          <summary>Funziona su WhatsApp? <span class="plus">+</span></summary>
+          <p>Sì. Scrivi direttamente su WhatsApp, senza scaricare altre app.</p>
+        </details>
+        <details>
+          <summary>Posso cambiare i piatti? <span class="plus">+</span></summary>
+          <p>Sì. Puoi chiedere di cambiare un pasto o un ingrediente e ChefTeam adatta il menu.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section cta-dark dark">
+      <div class="container center">
+        <h2 class="serif">Smetti di improvvisare.<br><span class="wa-green italic">Inizia a sentirti finalmente più organizzato.</span></h2>
+        <p>ChefTeam ti aiuta a vivere menu e spesa con più semplicità, meno stress e più costanza.</p>
+        <div style="margin-top:48px">
+          <a class="btn btn-green" href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener">☘️ Inizia ora</a>
+        </div>
+      </div>
+    </section>
+
+      </main>
+
+  <footer class="footer">
+    <div class="container">© 2026 ChefTeam. Tutti i diritti riservati.</div>
+  </footer>
+</body>
+</html>
