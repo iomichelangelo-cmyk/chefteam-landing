@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>ChefTeam — Diventa la persona che sa sempre cosa cucinare</title>
-  <meta name="description" content="ChefTeam ti aiuta su WhatsApp a organizzare menu e spesa in modo semplice." />
+  <meta name="description" content="ChefTeam ti aiuta su WhatsApp a organizzare menu, spesa e ricette in modo semplice." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,6 +34,7 @@
       background:#fff;
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
+      overflow-x:hidden;
     }
 
     a{color:inherit;text-decoration:none}
@@ -60,7 +62,7 @@
       justify-content:space-between;
       padding:0 48px;
       border-bottom:1px solid rgba(0,0,0,.06);
-      background:rgba(255,255,255,.92);
+      background:rgba(255,255,255,.94);
       backdrop-filter:blur(12px);
       position:sticky;
       top:0;
@@ -89,6 +91,7 @@
       cursor:pointer;
       transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
       white-space:nowrap;
+      line-height:1;
     }
     .btn:hover{transform:translateY(-2px)}
     .btn-green{
@@ -99,6 +102,39 @@
     .btn-black{
       background:var(--black);
       color:white;
+    }
+
+    .wa-icon{
+      width:22px;
+      height:22px;
+      display:inline-block;
+      flex:0 0 auto;
+      color:currentColor;
+    }
+
+    .cta-note{
+      margin-top:12px;
+      color:#777;
+      font-size:15px;
+      font-weight:750;
+      line-height:1.35;
+    }
+
+    .dark .cta-note{
+      color:#bdbdbd;
+    }
+
+    .price-cta-note{
+      margin-top:12px;
+      color:#6c6c6c;
+      font-size:14px;
+      font-weight:750;
+      line-height:1.35;
+      text-align:center;
+    }
+
+    .featured .price-cta-note{
+      color:#4b4b4b;
     }
 
     .badge{
@@ -120,20 +156,23 @@
     }
 
     .hero{
-      padding:22px 0 96px;
+      padding:74px 0 96px;
       background:#fff;
     }
+
     .hero-grid{
       display:grid;
       grid-template-columns:1.02fr 1fr;
       gap:76px;
       align-items:center;
     }
+
     .hero h1{
       font-size:76px;
       margin:0 0 34px;
       max-width:620px;
     }
+
     .hero p{
       max-width:590px;
       color:#555;
@@ -141,450 +180,6 @@
       line-height:1.58;
       margin:0 0 40px;
       font-weight:500;
-    }
-    .hero-note{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      margin-top:26px;
-      color:#828282;
-      font-weight:600;
-      font-size:15px;
-    }
-    .hero-dots{
-      display:inline-flex;
-      gap:7px;
-    }
-    .hero-dots span{
-      width:10px;height:10px;
-      border-radius:50%;
-      background:#9BE8BA;
-    }
-    .photo-card{
-      position:relative;
-      border-radius:28px;
-      overflow:hidden;
-      box-shadow:0 28px 80px rgba(0,0,0,.14);
-      background:#f3f3f3;
-    }
-    .hero-photo{
-      aspect-ratio:4/3;
-    }
-    .photo-card img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-    .floating-card{
-      position:absolute;
-      left:38px;
-      bottom:32px;
-      display:flex;
-      align-items:center;
-      gap:18px;
-      background:rgba(255,255,255,.94);
-      backdrop-filter:blur(10px);
-      border-radius:18px;
-      padding:18px 24px;
-      box-shadow:0 20px 48px rgba(0,0,0,.16);
-      min-width:330px;
-    }
-    .floating-icon{
-      width:52px;
-      height:52px;
-      border-radius:13px;
-      background:var(--green);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#fff;
-      font-size:26px;
-      flex:0 0 auto;
-    }
-    .floating-card strong{
-      display:block;
-      color:#111;
-      font-size:17px;
-      margin-bottom:6px;
-    }
-    .floating-card span{
-      color:#747474;
-      font-size:15px;
-      font-weight:600;
-    }
-
-    .two-col{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:92px;
-      align-items:center;
-    }
-    .large-photo{
-      border-radius:26px;
-      overflow:hidden;
-      box-shadow:0 26px 70px rgba(0,0,0,.13);
-      aspect-ratio:4/3;
-      background:#f2f2f2;
-    }
-    .large-photo.tall{
-      aspect-ratio:1.08/1;
-    }
-    .large-photo img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    h2{
-      font-size:56px;
-      margin:34px 0 42px;
-      color:#171717;
-    }
-
-    .check-list{
-      display:grid;
-      gap:24px;
-      margin:0;
-      padding:0;
-      list-style:none;
-    }
-    .check-list li{
-      display:flex;
-      align-items:center;
-      gap:20px;
-      color:#4b4b4b;
-      font-size:22px;
-      line-height:1.35;
-      font-weight:500;
-    }
-    .check{
-      width:32px;
-      height:32px;
-      border-radius:50%;
-      background:var(--green);
-      color:#fff;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      flex:0 0 auto;
-      font-weight:900;
-    }
-
-    .cream{
-      background:var(--cream-2);
-    }
-    .problem h2{
-      margin-top:34px;
-      margin-bottom:62px;
-      font-size:58px;
-    }
-    .dash-list{
-      display:grid;
-      gap:26px;
-      list-style:none;
-      margin:0;
-      padding:0;
-    }
-    .dash-list li{
-      display:flex;
-      gap:24px;
-      align-items:center;
-      color:#4f4f4f;
-      font-size:22px;
-      line-height:1.35;
-      font-weight:500;
-    }
-    .dash{
-      width:20px;
-      height:3px;
-      border-radius:99px;
-      background:var(--green-dark);
-      flex:0 0 auto;
-    }
-
-    .dark{
-      background:var(--black);
-      color:#fff;
-    }
-    .dark .badge{
-      background:#1F4E30;
-      color:#79F0A3;
-    }
-    .center{
-      text-align:center;
-      max-width:940px;
-      margin:0 auto;
-    }
-    .dark h2{
-      color:#fff;
-      font-size:62px;
-      margin:34px 0 42px;
-    }
-    .dark p{
-      color:#AFAFAF;
-      font-size:22px;
-      line-height:1.55;
-      max-width:770px;
-      margin:0 auto;
-      font-weight:600;
-    }
-    .cta-dark{
-      padding:120px 0;
-      background:
-        radial-gradient(circle at 50% 100%, rgba(37,211,102,.22), transparent 34%),
-        var(--black);
-    }
-    .cta-dark h2{
-      font-size:70px;
-      max-width:920px;
-      margin-left:auto;
-      margin-right:auto;
-    }
-
-    .cards-head{
-      text-align:center;
-      margin-bottom:72px;
-    }
-    .cards-head h2{
-      margin-bottom:0;
-    }
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:28px;
-    }
-    .feature-card{
-      min-height:260px;
-      border:1px solid var(--line);
-      border-radius:26px;
-      padding:48px 42px;
-      box-shadow:0 20px 60px rgba(0,0,0,.07);
-      background:#fff;
-    }
-    .feature-icon{
-      width:58px;
-      height:58px;
-      border-radius:17px;
-      background:var(--mint);
-      color:var(--green-dark);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:28px;
-      margin-bottom:34px;
-    }
-    .feature-card h3{
-      font-family:Fraunces,Georgia,serif;
-      font-size:28px;
-      letter-spacing:-.04em;
-      margin:0 0 22px;
-      color:#171717;
-    }
-    .feature-card p{
-      color:#575757;
-      font-size:19px;
-      line-height:1.5;
-      margin:0;
-      font-weight:500;
-    }
-
-    .faq{
-      max-width:760px;
-      margin:0 auto;
-    }
-    .faq h2{
-      text-align:center;
-      margin-top:26px;
-      margin-bottom:62px;
-    }
-    details{
-      border:1px solid var(--line);
-      border-radius:22px;
-      background:#fff;
-      margin-bottom:16px;
-      padding:0;
-      overflow:hidden;
-    }
-    summary{
-      list-style:none;
-      cursor:pointer;
-      padding:28px 34px;
-      display:flex;
-      justify-content:space-between;
-      gap:18px;
-      align-items:center;
-      color:#171717;
-      font-weight:800;
-      font-size:20px;
-    }
-    summary::-webkit-details-marker{display:none}
-    details p{
-      color:#5f5f5f;
-      font-size:17px;
-      line-height:1.55;
-      margin:0;
-      padding:0 34px 30px;
-    }
-    .plus{
-      width:28px;height:28px;border-radius:50%;
-      background:var(--mint);
-      color:var(--green-dark);
-      display:flex;align-items:center;justify-content:center;
-      font-weight:900;
-    }
-
-    .pricing{
-      text-align:center;
-    }
-    .pricing h2{
-      margin:30px auto 20px;
-      max-width:880px;
-    }
-    .pricing-sub{
-      color:#7a7a7a;
-      font-size:22px;
-      line-height:1.45;
-      margin:0 auto 70px;
-      max-width:650px;
-      font-weight:600;
-    }
-    .price-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:30px;
-      max-width:760px;
-      margin:0 auto;
-      text-align:left;
-    }
-    .price-card{
-      position:relative;
-      border:2px solid var(--line);
-      border-radius:28px;
-      padding:52px 44px;
-      background:#fff;
-    }
-    .price-card.featured{
-      border-color:var(--green);
-      background:#EEFDF5;
-    }
-    .price-label{
-      color:#858585;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      font-weight:800;
-      font-size:14px;
-      margin-bottom:22px;
-    }
-    .price{
-      font-family:Fraunces,Georgia,serif;
-      font-size:56px;
-      font-weight:800;
-      letter-spacing:-.05em;
-      color:#171717;
-      margin-bottom:16px;
-    }
-    .price small{
-      font-family:Inter,sans-serif;
-      font-size:20px;
-      color:#777;
-      font-weight:500;
-      letter-spacing:0;
-    }
-    .price-card p{
-      color:#5c5c5c;
-      font-size:18px;
-      margin:0 0 40px;
-      font-weight:500;
-    }
-    .ribbon{
-      position:absolute;
-      top:-19px;
-      left:50%;
-      transform:translateX(-50%);
-      background:var(--green);
-      color:#fff;
-      border-radius:999px;
-      padding:12px 28px;
-      font-size:14px;
-      font-weight:900;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      white-space:nowrap;
-    }
-    .price-card .btn{
-      width:100%;
-      padding:18px 24px;
-      font-size:17px;
-    }
-
-    .founder{
-      background:#ECFFF7;
-      border-top:1px solid #CBEFE0;
-    }
-    .founder .two-col{
-      gap:78px;
-    }
-    .founder p{
-      color:#4d4d4d;
-      font-size:21px;
-      line-height:1.68;
-      margin:0 0 24px;
-      font-weight:500;
-    }
-
-    .footer{
-      padding:34px 0;
-      background:#fff;
-      border-top:1px solid rgba(0,0,0,.06);
-      color:#777;
-      text-align:center;
-      font-size:14px;
-    }
-
-    @media(max-width: 900px){
-      .container{width:min(100% - 40px,var(--max))}
-      .nav{height:70px;padding:0 20px}
-      .logo{font-size:23px}
-      .nav .btn{padding:13px 18px;font-size:0}
-      .nav .btn span{display:none}
-      .section{padding:78px 0}
-      .hero{padding:34px 0 74px}
-      .hero-grid,.two-col,.cards,.price-grid{
-        grid-template-columns:1fr;
-        gap:44px;
-      }
-      .hero h1{font-size:48px;max-width:none}
-      .hero p{font-size:18px}
-      h2,.problem h2{font-size:42px}
-      .dark h2,.cta-dark h2{font-size:44px}
-      .check-list li,.dash-list li{font-size:18px}
-      .large-photo,.large-photo.tall,.hero-photo{aspect-ratio:4/3}
-      .floating-card{
-        left:16px;
-        right:16px;
-        bottom:16px;
-        min-width:0;
-        padding:14px 16px;
-      }
-      .floating-icon{width:42px;height:42px;font-size:22px}
-      .floating-card strong{font-size:15px}
-      .floating-card span{font-size:13px}
-      .feature-card{padding:34px 28px;min-height:auto}
-      .price-card{padding:42px 30px}
-      .price{font-size:48px}
-      .founder .two-col .large-photo{order:-1}
-    }
-  
-    /* Conversion patch desktop */
-    .wa-icon{
-      width:22px;
-      height:22px;
-      display:inline-block;
-      flex:0 0 auto;
-    }
-
-    .btn-green .wa-icon{
-      color:#fff;
     }
 
     .hero-proof{
@@ -623,11 +218,351 @@
       font-weight:900;
     }
 
-    .cta-under{
-      margin-top:14px;
-      color:#777;
+    .photo-card{
+      position:relative;
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:0 28px 80px rgba(0,0,0,.14);
+      background:#f3f3f3;
+    }
+
+    .hero-photo{
+      aspect-ratio:4/3;
+    }
+
+    .photo-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .floating-card{
+      position:absolute;
+      left:38px;
+      bottom:32px;
+      display:flex;
+      align-items:center;
+      gap:18px;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(10px);
+      border-radius:18px;
+      padding:18px 24px;
+      box-shadow:0 20px 48px rgba(0,0,0,.16);
+      min-width:330px;
+    }
+
+    .floating-icon{
+      width:52px;
+      height:52px;
+      border-radius:13px;
+      background:var(--green);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:26px;
+      flex:0 0 auto;
+    }
+
+    .floating-card strong{
+      display:block;
+      color:#111;
+      font-size:17px;
+      margin-bottom:6px;
+    }
+
+    .floating-card span{
+      color:#747474;
       font-size:15px;
-      font-weight:700;
+      font-weight:600;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:92px;
+      align-items:center;
+    }
+
+    .large-photo{
+      border-radius:26px;
+      overflow:hidden;
+      box-shadow:0 26px 70px rgba(0,0,0,.13);
+      aspect-ratio:4/3;
+      background:#f2f2f2;
+    }
+
+    .large-photo.tall{
+      aspect-ratio:1.08/1;
+    }
+
+    .large-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    h2{
+      font-size:56px;
+      margin:34px 0 42px;
+      color:#171717;
+    }
+
+    .check-list{
+      display:grid;
+      gap:24px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+
+    .check-list li{
+      display:flex;
+      align-items:center;
+      gap:20px;
+      color:#4b4b4b;
+      font-size:22px;
+      line-height:1.35;
+      font-weight:500;
+    }
+
+    .check{
+      width:32px;
+      height:32px;
+      border-radius:50%;
+      background:var(--green);
+      color:#fff;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      flex:0 0 auto;
+      font-weight:900;
+    }
+
+    .cream{
+      background:var(--cream-2);
+    }
+
+    .problem h2{
+      margin-top:34px;
+      margin-bottom:62px;
+      font-size:58px;
+    }
+
+    .dash-list{
+      display:grid;
+      gap:26px;
+      list-style:none;
+      margin:0;
+      padding:0;
+    }
+
+    .dash-list li{
+      display:flex;
+      gap:24px;
+      align-items:center;
+      color:#4f4f4f;
+      font-size:22px;
+      line-height:1.35;
+      font-weight:500;
+    }
+
+    .dash{
+      width:20px;
+      height:3px;
+      border-radius:99px;
+      background:var(--green-dark);
+      flex:0 0 auto;
+    }
+
+    .dark{
+      background:var(--black);
+      color:#fff;
+    }
+
+    .dark .badge{
+      background:#1F4E30;
+      color:#79F0A3;
+    }
+
+    .center{
+      text-align:center;
+      max-width:940px;
+      margin:0 auto;
+    }
+
+    .dark h2{
+      color:#fff;
+      font-size:62px;
+      margin:34px 0 42px;
+    }
+
+    .dark p{
+      color:#AFAFAF;
+      font-size:22px;
+      line-height:1.55;
+      max-width:770px;
+      margin:0 auto;
+      font-weight:600;
+    }
+
+    .cards-head{
+      text-align:center;
+      margin-bottom:72px;
+    }
+
+    .cards-head h2{
+      margin-bottom:0;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:28px;
+    }
+
+    .feature-card{
+      min-height:260px;
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:48px 42px;
+      box-shadow:0 20px 60px rgba(0,0,0,.07);
+      background:#fff;
+    }
+
+    .feature-icon{
+      width:66px;
+      height:66px;
+      border-radius:19px;
+      background:var(--mint);
+      color:var(--green-dark);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:34px;
+    }
+
+    .feature-icon svg{
+      width:34px;
+      height:34px;
+      stroke:currentColor;
+    }
+
+    .feature-card h3{
+      font-family:Fraunces,Georgia,serif;
+      font-size:28px;
+      letter-spacing:-.04em;
+      margin:0 0 22px;
+      color:#171717;
+    }
+
+    .feature-card p{
+      color:#575757;
+      font-size:19px;
+      line-height:1.5;
+      margin:0;
+      font-weight:500;
+    }
+
+    .founder{
+      background:#ECFFF7;
+      border-top:1px solid #CBEFE0;
+    }
+
+    .founder .two-col{
+      gap:78px;
+    }
+
+    .founder p{
+      color:#4d4d4d;
+      font-size:20px;
+      line-height:1.62;
+      margin:0 0 18px;
+      font-weight:500;
+    }
+
+    .story-highlight{
+      background:#fff;
+      border-left:5px solid var(--green);
+      border-radius:18px;
+      padding:20px 22px;
+      margin:26px 0;
+      box-shadow:0 18px 44px rgba(0,0,0,.06);
+      font-weight:800 !important;
+      color:#202020 !important;
+    }
+
+    .pricing{
+      text-align:center;
+    }
+
+    .pricing h2{
+      margin:30px auto 20px;
+      max-width:880px;
+    }
+
+    .pricing-sub{
+      color:#7a7a7a;
+      font-size:22px;
+      line-height:1.45;
+      margin:0 auto 70px;
+      max-width:650px;
+      font-weight:600;
+    }
+
+    .price-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+      max-width:760px;
+      margin:0 auto;
+      text-align:left;
+    }
+
+    .price-card{
+      position:relative;
+      border:2px solid var(--line);
+      border-radius:28px;
+      padding:52px 44px;
+      background:#fff;
+    }
+
+    .price-card.featured{
+      border-color:var(--green);
+      background:#EEFDF5;
+    }
+
+    .price-label{
+      color:#858585;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:800;
+      font-size:14px;
+      margin-bottom:22px;
+    }
+
+    .price{
+      font-family:Fraunces,Georgia,serif;
+      font-size:56px;
+      font-weight:800;
+      letter-spacing:-.05em;
+      color:#171717;
+      margin-bottom:16px;
+    }
+
+    .price small{
+      font-family:Inter,sans-serif;
+      font-size:20px;
+      color:#777;
+      font-weight:500;
+      letter-spacing:0;
+    }
+
+    .price-card p{
+      color:#5c5c5c;
+      font-size:18px;
+      margin:0 0 34px;
+      font-weight:500;
     }
 
     .price-benefits{
@@ -654,138 +589,537 @@
       font-weight:900;
     }
 
-    .featured .price-benefits li{
-      color:#333;
+    .ribbon{
+      position:absolute;
+      top:-19px;
+      left:50%;
+      transform:translateX(-50%);
+      background:var(--green);
+      color:#fff;
+      border-radius:999px;
+      padding:12px 28px;
+      font-size:14px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      white-space:nowrap;
     }
 
-    .story-highlight{
-      background:#fff;
-      border-left:5px solid var(--green);
-      border-radius:18px;
-      padding:20px 22px;
-      margin:28px 0;
-      box-shadow:0 18px 44px rgba(0,0,0,.06);
-      font-weight:800;
-      color:#202020 !important;
-    }
-
-  
-  /* Better icons for feature cards */
-  .feature-grid{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:28px;
-    margin-top:56px;
-  }
-
-  .feature-card{
-    background:#fff;
-    border:1px solid #e8e2d8;
-    border-radius:28px;
-    padding:42px 34px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.04);
-  }
-
-  .feature-icon{
-    width:72px;
-    height:72px;
-    border-radius:20px;
-    background:#eef8f3;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:28px;
-  }
-
-  .feature-icon svg{
-    width:34px;
-    height:34px;
-    stroke:#1fb383;
-  }
-
-  .feature-title{
-    font-size:28px;
-    line-height:1.05;
-    margin:0 0 16px 0;
-  }
-
-  .feature-copy{
-    font-size:18px;
-    line-height:1.65;
-    color:#525252;
-    margin:0;
-  }
-
-  @media (max-width: 1024px){
-    .feature-grid{
-      grid-template-columns:1fr;
-      gap:20px;
-    }
-
-    .feature-card{
-      padding:30px 24px;
-    }
-
-    .feature-title{
-      font-size:24px;
-    }
-
-    .feature-copy{
+    .price-card .btn{
+      width:100%;
+      padding:18px 24px;
       font-size:17px;
     }
-  }
 
+    .faq{
+      max-width:760px;
+      margin:0 auto;
+    }
 
-  /* CTA notes fix */
-  .cta-note{
-    margin-top:12px;
-    color:#777;
-    font-size:15px;
-    font-weight:750;
-    line-height:1.35;
-  }
+    .faq h2{
+      text-align:center;
+      margin-top:26px;
+      margin-bottom:62px;
+    }
 
-  .dark .cta-note{
-    color:#bdbdbd;
-  }
+    details{
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:#fff;
+      margin-bottom:16px;
+      padding:0;
+      overflow:hidden;
+    }
 
-  .price-cta-note{
-    margin-top:12px;
-    color:#6c6c6c;
-    font-size:14px;
-    font-weight:750;
-    line-height:1.35;
-    text-align:center;
-  }
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding:28px 34px;
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      align-items:center;
+      color:#171717;
+      font-weight:800;
+      font-size:20px;
+    }
 
-  .featured .price-cta-note{
-    color:#4b4b4b;
-  }
+    summary::-webkit-details-marker{display:none}
 
-  .wa-icon{
-    width:22px;
-    height:22px;
-    display:inline-block;
-    flex:0 0 auto;
-  }
+    details p{
+      color:#5f5f5f;
+      font-size:17px;
+      line-height:1.55;
+      margin:0;
+      padding:0 34px 30px;
+    }
 
-</style>
+    .plus{
+      width:28px;
+      height:28px;
+      border-radius:50%;
+      background:var(--mint);
+      color:var(--green-dark);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      flex:0 0 auto;
+    }
+
+    .cta-dark{
+      padding:120px 0;
+      background:
+        radial-gradient(circle at 50% 100%, rgba(37,211,102,.22), transparent 34%),
+        var(--black);
+    }
+
+    .cta-dark h2{
+      font-size:70px;
+      max-width:920px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .footer{
+      padding:34px 0;
+      background:#fff;
+      border-top:1px solid rgba(0,0,0,.06);
+      color:#777;
+      text-align:center;
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .footer a{
+      color:#777;
+      text-decoration:none;
+    }
+
+    .footer a:hover{
+      color:var(--green-dark);
+    }
+
+    /* MOBILE DEFINITIVO */
+    @media (max-width: 900px) {
+      .container{
+        width:calc(100% - 40px);
+      }
+
+      .nav{
+        height:82px;
+        padding:0 20px;
+      }
+
+      .logo{
+        font-size:28px;
+      }
+
+      .nav .btn{
+        width:68px;
+        height:68px;
+        padding:0;
+        border-radius:999px;
+        font-size:0;
+        box-shadow:0 14px 38px rgba(37,211,102,.26);
+      }
+
+      .nav .btn span{
+        display:none;
+      }
+
+      .nav .wa-icon{
+        width:30px;
+        height:30px;
+      }
+
+      .section{
+        padding:64px 0;
+      }
+
+      .hero{
+        padding:46px 0 66px;
+      }
+
+      .hero-grid,
+      .two-col,
+      .cards,
+      .price-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+      }
+
+      .hero h1{
+        font-size:48px;
+        line-height:.94;
+        margin:0 0 22px;
+        max-width:none;
+      }
+
+      .hero p{
+        max-width:none;
+        font-size:18px;
+        line-height:1.5;
+        margin:0 0 24px;
+      }
+
+      .hero .btn{
+        width:100%;
+        padding:18px 22px;
+        font-size:18px;
+      }
+
+      .cta-note{
+        font-size:14px;
+        text-align:center;
+        margin-top:12px;
+      }
+
+      .hero-proof{
+        margin-top:18px;
+        gap:8px;
+      }
+
+      .hero-proof span{
+        font-size:12px;
+        padding:9px 11px;
+      }
+
+      .hero-photo{
+        aspect-ratio:1 / .9;
+        border-radius:24px;
+      }
+
+      .floating-card{
+        left:14px;
+        right:14px;
+        bottom:14px;
+        min-width:0;
+        padding:12px 14px;
+        gap:12px;
+        border-radius:16px;
+      }
+
+      .floating-icon{
+        width:40px;
+        height:40px;
+        font-size:20px;
+      }
+
+      .floating-card strong{
+        font-size:14px;
+        margin-bottom:4px;
+      }
+
+      .floating-card span{
+        font-size:12px;
+        line-height:1.35;
+      }
+
+      .badge{
+        padding:10px 16px;
+        font-size:12px;
+        letter-spacing:.13em;
+      }
+
+      h2,
+      .problem h2,
+      .dark h2,
+      .cta-dark h2{
+        font-size:39px;
+        line-height:.98;
+        margin:22px 0 24px;
+      }
+
+      .dark{
+        padding:70px 0;
+      }
+
+      .dark h2{
+        font-size:38px;
+      }
+
+      .dark p{
+        font-size:17px;
+        line-height:1.55;
+      }
+
+      .problem{
+        padding:64px 0;
+      }
+
+      .problem .large-photo{
+        order:-1;
+      }
+
+      .large-photo,
+      .large-photo.tall{
+        aspect-ratio:4 / 3;
+        border-radius:24px;
+      }
+
+      .dash-list,
+      .check-list{
+        gap:16px;
+      }
+
+      .check-list li,
+      .dash-list li{
+        font-size:17px;
+        line-height:1.45;
+        gap:14px;
+      }
+
+      .check{
+        width:26px;
+        height:26px;
+        font-size:14px;
+      }
+
+      .dash{
+        width:17px;
+      }
+
+      .cards-head{
+        margin-bottom:26px;
+      }
+
+      .cards-head h2{
+        font-size:38px;
+      }
+
+      .cards{
+        gap:16px;
+      }
+
+      .feature-card{
+        min-height:auto;
+        padding:26px 22px;
+        border-radius:22px;
+        box-shadow:0 12px 34px rgba(0,0,0,.04);
+      }
+
+      .feature-icon{
+        width:50px;
+        height:50px;
+        border-radius:15px;
+        margin-bottom:18px;
+      }
+
+      .feature-icon svg{
+        width:27px;
+        height:27px;
+      }
+
+      .feature-card h3{
+        font-size:25px;
+        margin:0 0 12px;
+      }
+
+      .feature-card p{
+        font-size:16px;
+        line-height:1.52;
+      }
+
+      .founder{
+        padding:58px 0;
+      }
+
+      .founder .two-col{
+        gap:24px;
+      }
+
+      .founder .large-photo{
+        order:-1;
+        aspect-ratio:4 / 3.6;
+      }
+
+      .founder h2{
+        font-size:38px;
+        line-height:.98;
+        margin:20px 0 18px;
+      }
+
+      .founder p{
+        font-size:16px;
+        line-height:1.55;
+        margin:0 0 14px;
+      }
+
+      .story-highlight{
+        padding:18px 18px;
+        margin:20px 0;
+        border-radius:16px;
+      }
+
+      .pricing{
+        padding:62px 0;
+      }
+
+      .pricing h2{
+        font-size:38px;
+        line-height:.98;
+        margin:22px auto 18px;
+      }
+
+      .pricing-sub{
+        font-size:17px;
+        line-height:1.5;
+        margin:0 auto 34px;
+      }
+
+      .price-grid{
+        gap:18px;
+        max-width:none;
+      }
+
+      .price-card{
+        padding:30px 22px 26px;
+        border-radius:24px;
+      }
+
+      .price-label{
+        font-size:12px;
+        margin-bottom:14px;
+      }
+
+      .price{
+        font-size:44px;
+        line-height:1;
+        margin-bottom:14px;
+        display:flex;
+        align-items:flex-end;
+        gap:8px;
+        flex-wrap:wrap;
+      }
+
+      .price small{
+        font-size:18px;
+      }
+
+      .price-card p{
+        font-size:16px;
+        line-height:1.45;
+        margin:0 0 20px;
+      }
+
+      .price-benefits{
+        gap:10px;
+        margin:0 0 24px;
+      }
+
+      .price-benefits li{
+        font-size:15px;
+      }
+
+      .price-card .btn{
+        width:100%;
+        padding:16px 16px;
+        font-size:17px;
+      }
+
+      .price-cta-note{
+        font-size:13px;
+      }
+
+      .ribbon{
+        top:-13px;
+        padding:9px 18px;
+        font-size:11px;
+      }
+
+      .faq{
+        max-width:none;
+      }
+
+      .faq h2{
+        font-size:38px;
+        line-height:.98;
+        margin:22px 0 28px;
+      }
+
+      details{
+        margin-bottom:14px;
+        border-radius:20px;
+      }
+
+      summary{
+        padding:20px 18px;
+        font-size:17px;
+        line-height:1.3;
+        gap:12px;
+      }
+
+      .plus{
+        width:34px;
+        height:34px;
+        flex:0 0 34px;
+        font-size:20px;
+      }
+
+      details p{
+        padding:0 18px 20px;
+        font-size:15px;
+        line-height:1.55;
+      }
+
+      .cta-dark{
+        padding:72px 0;
+      }
+
+      .cta-dark h2{
+        font-size:40px;
+        line-height:.98;
+      }
+
+      .cta-dark p{
+        font-size:17px;
+        line-height:1.55;
+      }
+
+      .cta-dark .btn{
+        width:100%;
+        padding:18px 20px;
+        font-size:18px;
+      }
+
+      .footer{
+        padding:24px 20px 32px;
+        font-size:13px;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <nav class="nav">
-    <a class="logo" href="#">Chef<span>Team</span></a>
-    <a class="btn btn-green" href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.5 8.5 0 0 1-12.58 7.45L3 20.5l1.62-5.19A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 8.8c.3 2.9 2.1 4.7 5 5 .7.1 1.2-.6 1.3-1.2l.1-.5c.1-.4-.1-.8-.5-1l-1.1-.5c-.3-.1-.7 0-.9.3l-.3.4c-.1.2-.4.2-.6.1-.9-.5-1.6-1.2-2.1-2.1-.1-.2 0-.4.1-.6l.4-.3c.3-.2.4-.6.3-.9L9.7 6.4c-.2-.4-.6-.6-1-.5l-.5.1c-.6.1-1.2.7-1.1 1.3l.1.7Z" fill="currentColor"/></svg> <span>Scrivi su WhatsApp</span></a>
+    <a class="logo" href="./index.html">Chef<span>Team</span></a>
+    <a class="btn btn-green" href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener">
+      <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.5 8.5 0 0 1-12.58 7.45L3 20.5l1.62-5.19A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 8.8c.3 2.9 2.1 4.7 5 5 .7.1 1.2-.6 1.3-1.2l.1-.5c.1-.4-.1-.8-.5-1l-1.1-.5c-.3-.1-.7 0-.9.3l-.3.4c-.1.2-.4.2-.6.1-.9-.5-1.6-1.2-2.1-2.1-.1-.2 0-.4.1-.6l.4-.3c.3-.2.4-.6.3-.9L9.7 6.4c-.2-.4-.6-.6-1-.5l-.5.1c-.6.1-1.2.7-1.1 1.3l.1.7Z" fill="currentColor"/></svg>
+      <span>Scrivi su WhatsApp</span>
+    </a>
   </nav>
 
   <main>
     <!-- ORDINE NUMERICO SCREENSHOT: 1 Hero → 2 Manifesto → 3 Problema → 4 Settimana → 5 Come funziona → 6 Founder → 7 Prezzi → 8 FAQ → 9 CTA -->
-<section class="hero">
+
+    <section class="hero">
       <div class="container hero-grid">
         <div>
           <h1 class="serif">Diventa la persona che sa sempre cosa <span class="green italic">cucinare.</span></h1>
           <p>Menu, spesa e ricette direttamente su WhatsApp. ChefTeam impara gusti, obiettivi e abitudini, così ogni settimana sai cosa mangiare senza ricominciare da zero.</p>
-          <a class="btn btn-green" href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.5 8.5 0 0 1-12.58 7.45L3 20.5l1.62-5.19A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 8.8c.3 2.9 2.1 4.7 5 5 .7.1 1.2-.6 1.3-1.2l.1-.5c.1-.4-.1-.8-.5-1l-1.1-.5c-.3-.1-.7 0-.9.3l-.3.4c-.1.2-.4.2-.6.1-.9-.5-1.6-1.2-2.1-2.1-.1-.2 0-.4.1-.6l.4-.3c.3-.2.4-.6.3-.9L9.7 6.4c-.2-.4-.6-.6-1-.5l-.5.1c-.6.1-1.2.7-1.1 1.3l.1.7Z" fill="currentColor"/></svg> <span>Scrivi su WhatsApp</span></a><div class="cta-note">10 giorni gratis · nessuna app da scaricare · annulli quando vuoi</div>
+
+          <a class="btn btn-green" href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener">
+            <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.5 8.5 0 0 1-12.58 7.45L3 20.5l1.62-5.19A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 8.8c.3 2.9 2.1 4.7 5 5 .7.1 1.2-.6 1.3-1.2l.1-.5c.1-.4-.1-.8-.5-1l-1.1-.5c-.3-.1-.7 0-.9.3l-.3.4c-.1.2-.4.2-.6.1-.9-.5-1.6-1.2-2.1-2.1-.1-.2 0-.4.1-.6l.4-.3c.3-.2.4-.6.3-.9L9.7 6.4c-.2-.4-.6-.6-1-.5l-.5.1c-.6.1-1.2.7-1.1 1.3l.1.7Z" fill="currentColor"/></svg>
+            <span>Scrivi su WhatsApp</span>
+          </a>
+          <div class="cta-note">10 giorni gratis · nessuna app da scaricare · annulli quando vuoi</div>
+
+          <div class="hero-proof">
+            <span>Menu su misura</span>
+            <span>Lista spesa pronta</span>
+            <span>Ricette flessibili</span>
+          </div>
         </div>
 
         <div class="photo-card hero-photo">
@@ -849,57 +1183,40 @@
       </div>
     </section>
 
-    
-<section class="section how-it-works">
-  <div class="container">
-    <div class="section-head center">
-      <div class="badge">Come funziona</div>
-      <h2 class="serif">ChefTeam ti semplifica tutto</h2>
-    </div>
-
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="feature-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="3" y="4" width="18" height="17" rx="3" stroke="currentColor" stroke-width="2"/>
-            <path d="M8 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path d="M16 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path d="M3 9H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path d="M8 14L10.5 16.5L16 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+    <section class="section">
+      <div class="container">
+        <div class="cards-head">
+          <div class="badge">Come funziona</div>
+          <h2 class="serif">ChefTeam ti semplifica tutto</h2>
         </div>
-        <h3 class="serif feature-title">Menu chiaro</h3>
-        <p class="feature-copy">Sai subito cosa mangiare durante la settimana, con proposte semplici costruite sui tuoi gusti e sulle tue abitudini.</p>
-      </div>
 
-      <div class="feature-card">
-        <div class="feature-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="9" cy="20" r="1.7" stroke="currentColor" stroke-width="2"/>
-            <circle cx="18" cy="20" r="1.7" stroke="currentColor" stroke-width="2"/>
-            <path d="M3 4H5L7.2 14.2C7.4 15 8.1 15.5 8.9 15.5H18.4C19.2 15.5 19.9 15 20.1 14.2L21.4 8.5H6.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+        <div class="cards">
+          <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="3" stroke="currentColor" stroke-width="2"/><path d="M8 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M3 9H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 14L10.5 16.5L16 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Menu chiaro</h3>
+            <p>Ricevi un menu semplice da seguire, costruito sui tuoi gusti e sulle tue abitudini.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="20" r="1.7" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="20" r="1.7" stroke="currentColor" stroke-width="2"/><path d="M3 4H5L7.2 14.2C7.4 15 8.1 15.5 8.9 15.5H18.4C19.2 15.5 19.9 15 20.1 14.2L21.4 8.5H6.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Spesa smart</h3>
+            <p>Vai al supermercato con una lista già pronta: sai cosa comprare, quanto prenderne e riduci sprechi e confusione.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 7H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 7V5C10 3.9 10.9 3 12 3C13.1 3 14 3.9 14 5V9C14 10.1 14.9 11 16 11C17.1 11 18 10.1 18 9V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 17V15C8 13.9 8.9 13 10 13C11.1 13 12 13.9 12 15V19C12 20.1 12.9 21 14 21C15.1 21 16 20.1 16 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Piatti flessibili</h3>
+            <p>Se qualcosa non ti va, lo cambi. ChefTeam si adatta a te: piatti, ingredienti e preferenze si aggiornano senza complicazioni.</p>
+          </div>
         </div>
-        <h3 class="serif feature-title">Spesa smart</h3>
-        <p class="feature-copy">Vai al supermercato con una lista già pronta: sai cosa comprare, quanto prenderne e riduci sprechi e confusione.</p>
       </div>
-
-      <div class="feature-card">
-        <div class="feature-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 7H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path d="M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path d="M10 7V5C10 3.9 10.9 3 12 3C13.1 3 14 3.9 14 5V9C14 10.1 14.9 11 16 11C17.1 11 18 10.1 18 9V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 17V15C8 13.9 8.9 13 10 13C11.1 13 12 13.9 12 15V19C12 20.1 12.9 21 14 21C15.1 21 16 20.1 16 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h3 class="serif feature-title">Piatti flessibili</h3>
-        <p class="feature-copy">Se qualcosa non ti va, lo cambi. ChefTeam si adatta a te: piatti, ingredienti e preferenze si aggiornano senza complicazioni.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
+    </section>
 
     <section class="section founder">
       <div class="container two-col">
@@ -907,9 +1224,11 @@
           <div class="badge">Chi ha creato ChefTeam</div>
           <h2 class="serif">ChefTeam nasce da una sveglia vera</h2>
 
-          <p>Dopo le feste avevo preso 5 kg, la pressione si era alzata e mi sono spaventato. Ho capito che non mi mancava solo la volontà: mi mancava un sistema semplice per sapere cosa mangiare, cosa comprare e come variare i piatti.</p>
+          <p>Dopo le feste avevo preso 5 kg e la pressione si era alzata. Mi sono spaventato e ho capito una cosa semplice: non sapevo davvero come mangiare bene.</p>
 
-          <p>Provavo anche con l’AI, ma ogni volta dovevo rispiegare tutto: gusti, preferenze, obiettivi. Volevo un assistente che si ricordasse di me, direttamente su WhatsApp.</p>
+          <p>Cucinavo sempre le stesse cose, senza capire come bilanciare i pasti. E con l’AI dovevo ogni volta rispiegare tutto: gusti, preferenze, obiettivi.</p>
+
+          <p>Così ho creato ChefTeam: un aiuto semplice su WhatsApp, che si ricorda di te e ti accompagna settimana dopo settimana.</p>
 
           <p class="story-highlight">Oggi per me mangiare bene non è più un problema. È diventato un’abitudine semplice, guidata e sostenibile.</p>
 
@@ -932,16 +1251,28 @@
           <div class="price-card">
             <div class="price-label">Mensile</div>
             <div class="price">€7,90 <small>/mese</small></div>
-            <p>10 giorni di prova gratuita, poi €7,90/mese</p>
-            <a class="btn btn-black" href="https://chefteam.lemonsqueezy.com/checkout" target="_blank" rel="noopener">Inizia la prova gratuita</a><div class="price-cta-note">10 giorni gratis · pagamento sicuro · annulli quando vuoi</div>
+            <p>10 giorni gratis, poi €7,90/mese</p>
+            <ul class="price-benefits">
+              <li>Menu settimanale su misura</li>
+              <li>Lista della spesa automatica</li>
+              <li>Direttamente su WhatsApp</li>
+            </ul>
+            <a class="btn btn-black" href="https://chefteam.lemonsqueezy.com/checkout" target="_blank" rel="noopener">Inizia la prova gratuita</a>
+            <div class="price-cta-note">10 giorni gratis · pagamento sicuro · annulli quando vuoi</div>
           </div>
 
           <div class="price-card featured">
             <div class="ribbon">Più conveniente</div>
             <div class="price-label">Trimestrale</div>
             <div class="price">€19,90 <small>/3 mesi</small></div>
-            <p>Il modo migliore per darti continuità</p>
-            <a class="btn btn-green" href="https://chefteam.lemonsqueezy.com/checkout" target="_blank" rel="noopener">Inizia la prova gratuita</a><div class="price-cta-note">10 giorni gratis · pagamento sicuro · annulli quando vuoi</div>
+            <p>Più conveniente per iniziare con continuità</p>
+            <ul class="price-benefits">
+              <li>Tutto del piano mensile</li>
+              <li>Più continuità, meno pensieri</li>
+              <li>Checkout sicuro</li>
+            </ul>
+            <a class="btn btn-green" href="https://chefteam.lemonsqueezy.com/checkout" target="_blank" rel="noopener">Inizia la prova gratuita</a>
+            <div class="price-cta-note">10 giorni gratis · pagamento sicuro · annulli quando vuoi</div>
           </div>
         </div>
       </div>
@@ -956,18 +1287,22 @@
           <summary>ChefTeam è una dieta? <span class="plus">+</span></summary>
           <p>No. ChefTeam è un assistente culinario: ti aiuta a organizzare menu, spesa e ricette. Non sostituisce un nutrizionista o un medico.</p>
         </details>
+
         <details>
           <summary>Devo capire calorie, macro o nutrizione? <span class="plus">+</span></summary>
           <p>No. Puoi usarlo in modo semplice. Le indicazioni sono pratiche e orientative, non cliniche.</p>
         </details>
+
         <details>
           <summary>Funziona su WhatsApp? <span class="plus">+</span></summary>
           <p>Sì. Scrivi direttamente su WhatsApp, senza scaricare altre app.</p>
         </details>
+
         <details>
           <summary>Posso cambiare i piatti? <span class="plus">+</span></summary>
           <p>Sì. Puoi chiedere di cambiare un pasto o un ingrediente e ChefTeam adatta il menu.</p>
         </details>
+
         <details>
           <summary>Cosa succede dopo i 10 giorni? <span class="plus">+</span></summary>
           <p>Hai 10 giorni di prova gratuita. Poi puoi continuare con il piano mensile o trimestrale. L’obiettivo è farti capire subito se ChefTeam ti semplifica davvero la settimana.</p>
@@ -977,15 +1312,17 @@
 
     <section class="section cta-dark dark">
       <div class="container center">
-        <h2 class="serif">Smetti di improvvisare.<br><span class="wa-green italic">Inizia a sentirti finalmente più organizzato.</span></h2>
+        <h2 class="serif">Smetti di improvvisare.<br><span class="wa-green italic">Inizia a mangiare meglio senza complicarti la vita.</span></h2>
         <p>Provalo gratis per 10 giorni e scopri quanto cambia la settimana quando sai già cosa mangiare e cosa comprare.</p>
-        <div style="margin-top:48px">
-          <a class="btn btn-green" href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.5 8.5 0 0 1-12.58 7.45L3 20.5l1.62-5.19A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 8.8c.3 2.9 2.1 4.7 5 5 .7.1 1.2-.6 1.3-1.2l.1-.5c.1-.4-.1-.8-.5-1l-1.1-.5c-.3-.1-.7 0-.9.3l-.3.4c-.1.2-.4.2-.6.1-.9-.5-1.6-1.2-2.1-2.1-.1-.2 0-.4.1-.6l.4-.3c.3-.2.4-.6.3-.9L9.7 6.4c-.2-.4-.6-.6-1-.5l-.5.1c-.6.1-1.2.7-1.1 1.3l.1.7Z" fill="currentColor"/></svg> <span>Scrivi su WhatsApp</span></a>
+        <div style="margin-top:36px">
+          <a class="btn btn-green" href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener">
+            <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.5 8.5 0 0 1-12.58 7.45L3 20.5l1.62-5.19A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 8.8c.3 2.9 2.1 4.7 5 5 .7.1 1.2-.6 1.3-1.2l.1-.5c.1-.4-.1-.8-.5-1l-1.1-.5c-.3-.1-.7 0-.9.3l-.3.4c-.1.2-.4.2-.6.1-.9-.5-1.6-1.2-2.1-2.1-.1-.2 0-.4.1-.6l.4-.3c.3-.2.4-.6.3-.9L9.7 6.4c-.2-.4-.6-.6-1-.5l-.5.1c-.6.1-1.2.7-1.1 1.3l.1.7Z" fill="currentColor"/></svg>
+            <span>Scrivi su WhatsApp</span>
+          </a>
         </div>
       </div>
     </section>
-
-      </main>
+  </main>
 
   <footer class="footer">
     <div class="container">
