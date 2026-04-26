@@ -574,13 +574,208 @@
       .price{font-size:48px}
       .founder .two-col .large-photo{order:-1}
     }
-  </style>
+  
+    /* Conversion patch desktop */
+    .wa-icon{
+      width:22px;
+      height:22px;
+      display:inline-block;
+      flex:0 0 auto;
+    }
+
+    .btn-green .wa-icon{
+      color:#fff;
+    }
+
+    .hero-proof{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:28px;
+      max-width:640px;
+    }
+
+    .hero-proof span{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:#F0FFF6;
+      border:1px solid rgba(37,211,102,.22);
+      color:#236b43;
+      font-size:14px;
+      font-weight:800;
+      white-space:nowrap;
+    }
+
+    .hero-proof span::before{
+      content:"✓";
+      width:18px;
+      height:18px;
+      border-radius:50%;
+      background:var(--green);
+      color:#fff;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:12px;
+      font-weight:900;
+    }
+
+    .cta-under{
+      margin-top:14px;
+      color:#777;
+      font-size:15px;
+      font-weight:700;
+    }
+
+    .price-benefits{
+      list-style:none;
+      padding:0;
+      margin:0 0 32px;
+      display:grid;
+      gap:12px;
+    }
+
+    .price-benefits li{
+      color:#4d4d4d;
+      font-size:16px;
+      font-weight:650;
+      line-height:1.35;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+
+    .price-benefits li::before{
+      content:"✓";
+      color:var(--green-dark);
+      font-weight:900;
+    }
+
+    .featured .price-benefits li{
+      color:#333;
+    }
+
+    .story-highlight{
+      background:#fff;
+      border-left:5px solid var(--green);
+      border-radius:18px;
+      padding:20px 22px;
+      margin:28px 0;
+      box-shadow:0 18px 44px rgba(0,0,0,.06);
+      font-weight:800;
+      color:#202020 !important;
+    }
+
+  
+  /* Better icons for feature cards */
+  .feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:28px;
+    margin-top:56px;
+  }
+
+  .feature-card{
+    background:#fff;
+    border:1px solid #e8e2d8;
+    border-radius:28px;
+    padding:42px 34px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.04);
+  }
+
+  .feature-icon{
+    width:72px;
+    height:72px;
+    border-radius:20px;
+    background:#eef8f3;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:28px;
+  }
+
+  .feature-icon svg{
+    width:34px;
+    height:34px;
+    stroke:#1fb383;
+  }
+
+  .feature-title{
+    font-size:28px;
+    line-height:1.05;
+    margin:0 0 16px 0;
+  }
+
+  .feature-copy{
+    font-size:18px;
+    line-height:1.65;
+    color:#525252;
+    margin:0;
+  }
+
+  @media (max-width: 1024px){
+    .feature-grid{
+      grid-template-columns:1fr;
+      gap:20px;
+    }
+
+    .feature-card{
+      padding:30px 24px;
+    }
+
+    .feature-title{
+      font-size:24px;
+    }
+
+    .feature-copy{
+      font-size:17px;
+    }
+  }
+
+
+  /* CTA notes fix */
+  .cta-note{
+    margin-top:12px;
+    color:#777;
+    font-size:15px;
+    font-weight:750;
+    line-height:1.35;
+  }
+
+  .dark .cta-note{
+    color:#bdbdbd;
+  }
+
+  .price-cta-note{
+    margin-top:12px;
+    color:#6c6c6c;
+    font-size:14px;
+    font-weight:750;
+    line-height:1.35;
+    text-align:center;
+  }
+
+  .featured .price-cta-note{
+    color:#4b4b4b;
+  }
+
+  .wa-icon{
+    width:22px;
+    height:22px;
+    display:inline-block;
+    flex:0 0 auto;
+  }
+
+</style>
 </head>
 
 <body>
   <nav class="nav">
     <a class="logo" href="#">Chef<span>Team</span></a>
-    <a class="btn btn-green" href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener">☘️ <span>Provalo su WhatsApp</span></a>
+    <a class="btn btn-green" href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.5 8.5 0 0 1-12.58 7.45L3 20.5l1.62-5.19A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 8.8c.3 2.9 2.1 4.7 5 5 .7.1 1.2-.6 1.3-1.2l.1-.5c.1-.4-.1-.8-.5-1l-1.1-.5c-.3-.1-.7 0-.9.3l-.3.4c-.1.2-.4.2-.6.1-.9-.5-1.6-1.2-2.1-2.1-.1-.2 0-.4.1-.6l.4-.3c.3-.2.4-.6.3-.9L9.7 6.4c-.2-.4-.6-.6-1-.5l-.5.1c-.6.1-1.2.7-1.1 1.3l.1.7Z" fill="currentColor"/></svg> <span>Scrivi su WhatsApp</span></a>
   </nav>
 
   <main>
@@ -589,12 +784,8 @@
       <div class="container hero-grid">
         <div>
           <h1 class="serif">Diventa la persona che sa sempre cosa <span class="green italic">cucinare.</span></h1>
-          <p>ChefTeam ti aiuta su WhatsApp a organizzare menu e spesa in modo semplice, così smetti di improvvisare, perdi meno tempo e vivi la settimana con più leggerezza.</p>
-          <a class="btn btn-green" href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener">☘️ Provalo su WhatsApp</a>
-          <div class="hero-note">
-            <span class="hero-dots"><span></span><span></span><span></span></span>
-            Direttamente su WhatsApp, nessuna app da scaricare
-          </div>
+          <p>Menu, spesa e ricette direttamente su WhatsApp. ChefTeam impara gusti, obiettivi e abitudini, così ogni settimana sai cosa mangiare senza ricominciare da zero.</p>
+          <a class="btn btn-green" href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.5 8.5 0 0 1-12.58 7.45L3 20.5l1.62-5.19A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 8.8c.3 2.9 2.1 4.7 5 5 .7.1 1.2-.6 1.3-1.2l.1-.5c.1-.4-.1-.8-.5-1l-1.1-.5c-.3-.1-.7 0-.9.3l-.3.4c-.1.2-.4.2-.6.1-.9-.5-1.6-1.2-2.1-2.1-.1-.2 0-.4.1-.6l.4-.3c.3-.2.4-.6.3-.9L9.7 6.4c-.2-.4-.6-.6-1-.5l-.5.1c-.6.1-1.2.7-1.1 1.3l.1.7Z" fill="currentColor"/></svg> <span>Scrivi su WhatsApp</span></a><div class="cta-note">10 giorni gratis · nessuna app da scaricare · annulli quando vuoi</div>
         </div>
 
         <div class="photo-card hero-photo">
@@ -614,7 +805,7 @@
       <div class="container center">
         <div class="badge">Quello che cerchi davvero</div>
         <h2 class="serif">Non stai cercando solo idee per i pasti.<br>Stai cercando più ordine, più costanza, <span class="wa-green italic">più controllo.</span></h2>
-        <p>Il punto non è cucinare perfettamente. Il punto è smettere di arrivare ogni giorno senza sapere cosa mangiare, cosa comprare e da dove partire.</p>
+        <p>Il problema non era la forza di volontà. Era non avere un sistema semplice per sapere cosa mangiare, cosa comprare e come restare costante.</p>
       </div>
     </section>
 
@@ -627,8 +818,8 @@
             <li><span class="dash"></span>aprire il frigo e andare nel pallone</li>
             <li><span class="dash"></span>fare una spesa lunga e dispersiva</li>
             <li><span class="dash"></span>comprare cose inutili che finiscono per scadere</li>
-            <li><span class="dash"></span>pensare ogni giorno “oggi cosa cucino?”</li>
-            <li><span class="dash"></span>iniziare bene e mollare dopo poco</li>
+            <li><span class="dash"></span>chiederti ogni giorno “oggi cosa cucino?”</li>
+            <li><span class="dash"></span>iniziare bene, poi perdere costanza dopo pochi giorni</li>
           </ul>
         </div>
 
@@ -648,54 +839,81 @@
           <div class="badge">La tua settimana con ChefTeam</div>
           <h2 class="serif">Immagina la tua settimana così</h2>
           <ul class="check-list">
-            <li><span class="check">✓</span>apri WhatsApp e sai già cosa mangiare</li>
-            <li><span class="check">✓</span>fai la spesa più in fretta, con una lista chiara</li>
+            <li><span class="check">✓</span>apri WhatsApp e hai già il menu della settimana</li>
+            <li><span class="check">✓</span>vai al supermercato con una lista già ordinata</li>
             <li><span class="check">✓</span>compri solo quello che ti serve davvero</li>
-            <li><span class="check">✓</span>hai piatti semplici e piacevoli da seguire</li>
-            <li><span class="check">✓</span>ti senti finalmente più costante e organizzato</li>
+            <li><span class="check">✓</span>hai ricette semplici, con ingredienti che capisci</li>
+            <li><span class="check">✓</span>mangiare bene smette di sembrarti un problema</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="cards-head">
-          <div class="badge">Come funziona</div>
-          <h2 class="serif">ChefTeam ti semplifica tutto</h2>
-        </div>
+    
+<section class="section how-it-works">
+  <div class="container">
+    <div class="section-head center">
+      <div class="badge">Come funziona</div>
+      <h2 class="serif">ChefTeam ti semplifica tutto</h2>
+    </div>
 
-        <div class="cards">
-          <div class="feature-card">
-            <div class="feature-icon">📅</div>
-            <h3>Menu chiaro</h3>
-            <p>Sai subito cosa mangiare ogni giorno della settimana. Niente più indecisione, niente più improvvisazione.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🛍️</div>
-            <h3>Spesa smart</h3>
-            <p>Entri al supermercato con una lista già pronta. Sai cosa prendere, quanto, e non compri il superfluo.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">✏️</div>
-            <h3>Piatti flessibili</h3>
-            <p>Se qualcosa non ti va, lo cambi. ChefTeam si adatta a te, non il contrario.</p>
-          </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="4" width="18" height="17" rx="3" stroke="currentColor" stroke-width="2"/>
+            <path d="M8 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M16 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M3 9H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M8 14L10.5 16.5L16 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
+        <h3 class="serif feature-title">Menu chiaro</h3>
+        <p class="feature-copy">Sai subito cosa mangiare durante la settimana, con proposte semplici costruite sui tuoi gusti e sulle tue abitudini.</p>
       </div>
-    </section>
+
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="9" cy="20" r="1.7" stroke="currentColor" stroke-width="2"/>
+            <circle cx="18" cy="20" r="1.7" stroke="currentColor" stroke-width="2"/>
+            <path d="M3 4H5L7.2 14.2C7.4 15 8.1 15.5 8.9 15.5H18.4C19.2 15.5 19.9 15 20.1 14.2L21.4 8.5H6.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="serif feature-title">Spesa smart</h3>
+        <p class="feature-copy">Vai al supermercato con una lista già pronta: sai cosa comprare, quanto prenderne e riduci sprechi e confusione.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 7H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M10 7V5C10 3.9 10.9 3 12 3C13.1 3 14 3.9 14 5V9C14 10.1 14.9 11 16 11C17.1 11 18 10.1 18 9V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 17V15C8 13.9 8.9 13 10 13C11.1 13 12 13.9 12 15V19C12 20.1 12.9 21 14 21C15.1 21 16 20.1 16 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="serif feature-title">Piatti flessibili</h3>
+        <p class="feature-copy">Se qualcosa non ti va, lo cambi. ChefTeam si adatta a te: piatti, ingredienti e preferenze si aggiornano senza complicazioni.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <section class="section founder">
       <div class="container two-col">
         <div>
           <div class="badge">Chi ha creato ChefTeam</div>
           <h2 class="serif">ChefTeam nasce da una sveglia vera</h2>
-          <p>Dopo le feste avevo preso 5 kg. Ho avuto problemi di pressione alta, mi sono spaventato e ho capito una cosa semplice: non sapevo davvero come mangiare bene.</p>
-          <p>Ero sempre stato sovrappeso senza capire fino in fondo perché. Non sapevo come abbinare proteine, carboidrati, grassi e verdure. Non sapevo regolarmi con le quantità. Cucinavo sempre le stesse cose e, quando volevo cambiare, non sapevo da dove partire.</p>
-          <p>Ho provato anche con l’AI, ma ogni volta dovevo ricominciare da zero: rispiegare i miei gusti, le mie preferenze, i miei obiettivi, quello che avevo già mangiato e quello che volevo evitare.</p>
-          <p>Da lì è nata l’idea di ChefTeam: un assistente su WhatsApp che ti aiuta a organizzare menu e spesa, ma soprattutto si ricorda di te.</p>
-          <p>Nel mio caso, con più ordine a tavola e allenamento, ho perso 14 kg in 3 mesi, la pressione è tornata perfetta e sono tornato al peso che avevo a 20 anni.</p>
-          <p>ChefTeam non nasce per promettere miracoli. Nasce per rendere più semplice una cosa che per tante persone è sempre stata complicata: sapere cosa mangiare, cosa comprare e come restare costanti.</p>
+
+          <p>Dopo le feste avevo preso 5 kg, la pressione si era alzata e mi sono spaventato. Ho capito che non mi mancava solo la volontà: mi mancava un sistema semplice per sapere cosa mangiare, cosa comprare e come variare i piatti.</p>
+
+          <p>Provavo anche con l’AI, ma ogni volta dovevo rispiegare tutto: gusti, preferenze, obiettivi. Volevo un assistente che si ricordasse di me, direttamente su WhatsApp.</p>
+
+          <p class="story-highlight">Oggi per me mangiare bene non è più un problema. È diventato un’abitudine semplice, guidata e sostenibile.</p>
+
+          <p>Con più ordine a tavola e allenamento ho perso 14 kg in 3 mesi. ChefTeam non promette miracoli: ti aiuta a togliere caos e improvvisazione dalla settimana.</p>
         </div>
 
         <div class="large-photo tall">
@@ -715,7 +933,7 @@
             <div class="price-label">Mensile</div>
             <div class="price">€7,90 <small>/mese</small></div>
             <p>10 giorni di prova gratuita, poi €7,90/mese</p>
-            <a class="btn btn-black" href="https://chefteam.lemonsqueezy.com/checkout" target="_blank" rel="noopener">Inizia ora</a>
+            <a class="btn btn-black" href="https://chefteam.lemonsqueezy.com/checkout" target="_blank" rel="noopener">Inizia la prova gratuita</a><div class="price-cta-note">10 giorni gratis · pagamento sicuro · annulli quando vuoi</div>
           </div>
 
           <div class="price-card featured">
@@ -723,7 +941,7 @@
             <div class="price-label">Trimestrale</div>
             <div class="price">€19,90 <small>/3 mesi</small></div>
             <p>Il modo migliore per darti continuità</p>
-            <a class="btn btn-green" href="https://chefteam.lemonsqueezy.com/checkout" target="_blank" rel="noopener">Inizia ora</a>
+            <a class="btn btn-green" href="https://chefteam.lemonsqueezy.com/checkout" target="_blank" rel="noopener">Inizia la prova gratuita</a><div class="price-cta-note">10 giorni gratis · pagamento sicuro · annulli quando vuoi</div>
           </div>
         </div>
       </div>
@@ -750,15 +968,19 @@
           <summary>Posso cambiare i piatti? <span class="plus">+</span></summary>
           <p>Sì. Puoi chiedere di cambiare un pasto o un ingrediente e ChefTeam adatta il menu.</p>
         </details>
+        <details>
+          <summary>Cosa succede dopo i 10 giorni? <span class="plus">+</span></summary>
+          <p>Hai 10 giorni di prova gratuita. Poi puoi continuare con il piano mensile o trimestrale. L’obiettivo è farti capire subito se ChefTeam ti semplifica davvero la settimana.</p>
+        </details>
       </div>
     </section>
 
     <section class="section cta-dark dark">
       <div class="container center">
         <h2 class="serif">Smetti di improvvisare.<br><span class="wa-green italic">Inizia a sentirti finalmente più organizzato.</span></h2>
-        <p>ChefTeam ti aiuta a vivere menu e spesa con più semplicità, meno stress e più costanza.</p>
+        <p>Provalo gratis per 10 giorni e scopri quanto cambia la settimana quando sai già cosa mangiare e cosa comprare.</p>
         <div style="margin-top:48px">
-          <a class="btn btn-green" href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener">☘️ Inizia ora</a>
+          <a class="btn btn-green" href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.5 8.5 0 0 1-12.58 7.45L3 20.5l1.62-5.19A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 8.8c.3 2.9 2.1 4.7 5 5 .7.1 1.2-.6 1.3-1.2l.1-.5c.1-.4-.1-.8-.5-1l-1.1-.5c-.3-.1-.7 0-.9.3l-.3.4c-.1.2-.4.2-.6.1-.9-.5-1.6-1.2-2.1-2.1-.1-.2 0-.4.1-.6l.4-.3c.3-.2.4-.6.3-.9L9.7 6.4c-.2-.4-.6-.6-1-.5l-.5.1c-.6.1-1.2.7-1.1 1.3l.1.7Z" fill="currentColor"/></svg> <span>Scrivi su WhatsApp</span></a><div class="cta-note">10 giorni gratis · nessuna app da scaricare · annulli quando vuoi</div>
         </div>
       </div>
     </section>
