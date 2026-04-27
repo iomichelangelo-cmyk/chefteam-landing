@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="1024x1024" href="./images/chefteam-icon-circle.png">
+  <link rel="apple-touch-icon" href="./images/chefteam-icon-circle.png">
 
   <style>
     :root {
@@ -69,14 +71,27 @@
     }
 
     .logo {
-      font-family:Fraunces,Georgia,serif;
-      font-size:26px;
-      font-weight:800;
-      letter-spacing:-.04em;
-      color:#111;
+      display:inline-flex;
+      align-items:center;
+      gap:14px;
+      flex:0 0 auto;
     }
 
-    .logo span { color:var(--green-dark); }
+    .logo-mark {
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      display:block;
+      flex:0 0 auto;
+      box-shadow:0 10px 22px rgba(37,211,102,.18);
+    }
+
+    .logo-wordmark {
+      width:220px;
+      height:auto;
+      display:block;
+      flex:0 0 auto;
+    }
 
     .btn {
       display:inline-flex;
@@ -766,11 +781,35 @@
       color:var(--green-dark);
     }
 
+    .footer-brand {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+      margin-bottom:16px;
+    }
+
+    .footer-brand .footer-mark {
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      display:block;
+      flex:0 0 auto;
+    }
+
+    .footer-brand .footer-wordmark {
+      width:190px;
+      height:auto;
+      display:block;
+    }
+
     /* MOBILE */
     @media (max-width: 900px) {
       .container { width:calc(100% - 40px); }
       .nav { height:82px; padding:0 20px; }
-      .logo { font-size:28px; }
+      .logo { gap:10px; min-width:0; }
+      .logo-mark { width:36px; height:36px; }
+      .logo-wordmark { width:154px; max-width:calc(100vw - 140px); }
       .nav .btn {
         width:68px;
         height:68px;
@@ -1254,7 +1293,7 @@
 
 <body>
   <nav class="nav">
-    <a class="logo" href="./index.html">Chef<span>Team</span></a>
+    <a class="logo" href="./index.html" aria-label="ChefTeam home"><img class="logo-mark" src="./images/chefteam-icon-circle.png" alt="ChefTeam icon"><img class="logo-wordmark" src="./images/chefteam-logo-wordmark.png" alt="ChefTeam"></a>
     <a class="btn btn-green" href="https://wa.me/393931423221?text=Ciao%20ChefTeam" target="_blank" rel="noopener">
       <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.5 8.5 0 0 1-12.58 7.45L3 20.5l1.62-5.19A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 8.8c.3 2.9 2.1 4.7 5 5 .7.1 1.2-.6 1.3-1.2l.1-.5c.1-.4-.1-.8-.5-1l-1.1-.5c-.3-.1-.7 0-.9.3l-.3.4c-.1.2-.4.2-.6.1-.9-.5-1.6-1.2-2.1-2.1-.1-.2 0-.4.1-.6l.4-.3c.3-.2.4-.6.3-.9L9.7 6.4c-.2-.4-.6-.6-1-.5l-.5.1c-.6.1-1.2.7-1.1 1.3l.1.7Z" fill="currentColor"/></svg>
       <span>Scrivi su WhatsApp</span>
@@ -1504,6 +1543,10 @@
 
   <footer class="footer">
     <div class="container">
+      <div class="footer-brand">
+        <img class="footer-mark" src="./images/chefteam-icon-circle.png" alt="ChefTeam icon">
+        <img class="footer-wordmark" src="./images/chefteam-logo-wordmark.png" alt="ChefTeam">
+      </div>
       <div style="margin-bottom:10px">
         <a href="./privacy.html">Privacy / trattamento dati</a> ·
         <a href="./cancellazione-dati.html">Cancellazione dati</a> ·
