@@ -1169,6 +1169,27 @@
       }
     }
 
+  
+
+    /* Rifinitura comparativa con foto */
+    .compare-visual {
+      margin:34px auto 8px;
+      max-width:760px;
+      border-radius:30px;
+      overflow:hidden;
+      box-shadow:0 22px 64px rgba(0,0,0,.10);
+      background:#f3f3f3;
+    }
+
+    .compare-visual img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      aspect-ratio:16/9;
+    }
+
+    .nowrap { white-space:nowrap; }
+
   </style>
 </head>
 
@@ -1234,6 +1255,11 @@
       <div class="container">
         <div class="cards-head">
           <div class="badge">Prima e dopo</div>
+          <h2 class="serif">La tua settimana a tavola, prima e dopo</h2>
+        </div>
+
+        <div class="compare-visual">
+          <img src="./images/lista_della_spesa.png" alt="Cellulare con lista della spesa ChefTeam al supermercato">
         </div>
 
         <div class="compare-grid">
@@ -1271,6 +1297,18 @@
           <h2 class="serif">Ogni settimana un menu costruito <span class="nowrap">su di te</span></h2>
         </div>
 
+        <div class="menu-style-block">
+          <div class="style-title">Stili menu disponibili</div>
+          <div class="style-strip">
+            <span>Proteico</span>
+            <span>Low carb</span>
+            <span>Mediterraneo</span>
+            <span>Equilibrato</span>
+            <span>Più leggero</span>
+            <span>Più saziante</span>
+          </div>
+        </div>
+
         <div class="cards">
           <div class="feature-card">
             <div class="feature-icon" aria-hidden="true">
@@ -1280,8 +1318,8 @@
                 <path d="M17.5 5.5L19 7L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <h3>Gli dici come vuoi mangiare</h3>
-            <p>Tipo di cucina, calorie, porzioni, velocità della spesa, varietà delle ricette, tempo ai fornelli e ingredienti da evitare: ChefTeam parte dalle tue regole.</p>
+            <h3>Imposti come vuoi mangiare</h3>
+            <p>Gli dici gusti, abitudini, ingredienti da evitare, stile del menu, tempo ai fornelli e quanto vuoi variare durante la settimana.</p>
           </div>
 
           <div class="feature-card">
@@ -1293,8 +1331,8 @@
                 <path d="M8 16H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               </svg>
             </div>
-            <h3>Scegli stile e praticità</h3>
-            <p>Puoi scegliere uno stile proteico, low carb, mediterraneo o equilibrato, ma anche una cucina più varia o più semplice e una spesa più facile da gestire.</p>
+            <h3>Ricevi menu e spesa della settimana</h3>
+            <p>ChefTeam ti manda su WhatsApp il menu settimanale e la lista della spesa ordinata, così sai cosa cucinare e cosa comprare.</p>
           </div>
 
           <div class="feature-card">
@@ -1306,20 +1344,8 @@
                 <circle cx="15" cy="17" r="3" fill="white" stroke="currentColor" stroke-width="2"/>
               </svg>
             </div>
-            <h3>Cambi tutto quando vuoi</h3>
-            <p>Cambi ingredienti, piatti, esclusioni, porzioni o preferenze direttamente su WhatsApp. ChefTeam se lo ricorda per le settimane successive.</p>
-          </div>
-        </div>
-
-        <div class="menu-style-block">
-          <div class="style-title">Stili di menu disponibili</div>
-          <div class="style-strip">
-            <span>Proteico</span>
-            <span>Low carb</span>
-            <span>Mediterraneo</span>
-            <span>Equilibrato</span>
-            <span>Più leggero</span>
-            <span>Più saziante</span>
+            <h3>Aggiorni quando vuoi</h3>
+            <p>Se un piatto non ti va, cambi pasto, ingrediente o preferenza direttamente su WhatsApp. ChefTeam si adatta e lo ricorda.</p>
           </div>
         </div>
       </div>
@@ -1367,10 +1393,10 @@
         <div>
           <div class="badge">Chi ha creato ChefTeam</div>
           <h2 class="serif">ChefTeam nasce da un problema che ho vissuto davvero</h2>
-          <p>Un giorno ho visto una specie di arcobaleno da un occhio: mi sono spaventato e sono finito in ospedale. Lì mi hanno spiegato che poteva essere un segnale legato alla pressione alta e mi hanno detto una cosa molto semplice: se non cambiavo abitudini alimentari, avrei rischiato di dover iniziare una terapia.</p>
-          <p>Il problema era che non sapevo davvero da dove partire. Cucinavo sempre le stesse cose, facevo una spesa confusa e ogni volta dovevo capire da zero cosa mangiare, cosa comprare e come organizzarmi.</p>
-          <p class="story-highlight">Da lì ho iniziato a costruire un sistema più semplice: menu settimanale, spesa ordinata e preferenze sempre aggiornabili. Nel mio caso, oggi mangiare bene non è più un problema quotidiano e la pressione è tornata stabile.</p>
-          <p>ChefTeam nasce per questo: aiutarti a togliere caos e improvvisazione dalla settimana, senza trasformare il cibo in un lavoro in più.</p>
+          <p>Un giorno ho visto una specie di arcobaleno da un occhio: mi sono spaventato e sono finito in ospedale. Lì mi hanno spiegato che poteva essere un segnale legato alla pressione alta.</p>
+          <p>Mi hanno detto che, se non cambiavo abitudini alimentari, avrei rischiato di dover iniziare una terapia. Il problema era che non sapevo davvero da dove partire: cucinavo sempre le stesse cose, facevo una spesa confusa e ogni giorno dovevo ricominciare da zero.</p>
+          <p class="story-highlight">Da lì ho costruito un sistema più semplice: menu settimanale, spesa ordinata e preferenze sempre aggiornabili.</p>
+          <p>Oggi, nel mio caso, mangiare bene non è più un problema quotidiano e la pressione è tornata stabile. ChefTeam nasce per questo: togliere caos e improvvisazione dalla settimana, senza trasformare il cibo in un lavoro in più.</p>
         </div>
 
         <div class="large-photo">
